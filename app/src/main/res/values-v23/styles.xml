@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="Apptheme2" parent="android:Theme.Material.Light.LightStatusBar">
+        <item name="android:colorPrimary">#FAA60E</item>
+    </style>
+
+    <style name="Apptheme3" parent="android:Theme.Material.Light.LightStatusBar">
+        <item name="android:colorPrimary">@color/colorlogo2</item>
+    </style>
+
+    <style name="Apptheme4" parent="android:Theme.Material.Light.LightStatusBar">
+        <item name="android:colorPrimary">@android:color/white</item>
+    </style>
+
+</resources>
