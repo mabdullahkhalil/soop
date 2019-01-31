@@ -120,6 +120,9 @@ public class LoginPage extends AppCompatActivity {
                         mDialog.dismiss();
                         rollNumber.setText("");
                         rollNumber.setError("Enter correct roll number to continue.");
+                        Intent intent = new Intent(LoginPage.this,
+                                studentCards.class);
+                        startActivity(intent);
 
                     }
 

@@ -136,33 +136,34 @@
                 </LinearLayout>
 
 
-
                 <LinearLayout
+                    android:id="@+id/quizlayout"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/border4"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:orientation="vertical" >
+                    android:layout_weight="1"
+                    android:background="@drawable/border4"
+                    android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
-                            android:layout_marginRight="8dp"
                             android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_weight="1"
-                            android:src="@drawable/ic_quiz"/>
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:text="Quiz"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorlogo4"
-                        android:gravity="center"/>
+                            android:src="@drawable/ic_quiz" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Quiz"
+                            android:textColor="@color/colorlogo4"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
 
 
                 </LinearLayout>

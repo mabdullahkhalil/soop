@@ -20,7 +20,9 @@
         </activity>
         <activity android:name=".sliderActivity" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".studentCards"></activity>
+        <activity android:name=".studentCards" />
+        <activity android:name=".quizzes"
+            android:theme="@style/AppThemeBar1"></activity>
     </application>
 
 </manifest>

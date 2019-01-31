@@ -19,5 +19,14 @@
     <item name="android:textColor">@color/colorlogo3</item>
     </style>
 
-    
+
+    <style name="AppThemeBar1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorlogo2</item>
+        <item name="colorPrimaryDark">@color/colorlogo2</item>
+        <item name="colorAccent">@color/colorlogo2</item>
+    </style>
+
+
+
 </resources>
