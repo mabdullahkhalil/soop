@@ -21,7 +21,7 @@
                     android:id="@+id/dotLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="18dp"
                     android:gravity="center"
                     android:orientation="horizontal">
                 </LinearLayout>
@@ -56,7 +56,7 @@
                             android:layout_height="fill_parent"
                             android:layout_weight="1"
                             android:text="Announcement"
-                            android:textSize="20dp"
+                            android:textSize="18dp"
                             android:textStyle="bold"
                             android:textColor="@color/colorlogo1"
                             android:gravity="center"/>
@@ -85,7 +85,7 @@
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
                         android:text="Notes"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         android:textStyle="bold"
                         android:textColor="@color/colorlogo2"
                         android:gravity="center"/>
@@ -127,7 +127,7 @@
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
                         android:text="Attendance"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         android:textStyle="bold"
                         android:textColor="@color/colorlogo3"
                         android:gravity="center"/>
@@ -159,7 +159,7 @@
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
                         android:text="Quiz"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         android:textStyle="bold"
                         android:textColor="@color/colorlogo4"
                         android:gravity="center"/>
