@@ -1,5 +1,6 @@
 package com.something.mabdullahk.soop;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +40,15 @@ public class studentCards extends AppCompatActivity {
 
         layoutDot = (LinearLayout) findViewById(R.id.dotLayout1);
         viewPager = findViewById(R.id.view_pager_1);
+
+        LinearLayout layout = (LinearLayout) findViewById(R.id.quizlayout);
+
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(studentCards.this,quizzes.class));
+            }
+        });
 
 
         student student_1 = new student("Ibrahim Waqas","Class 1 Section A","1","2","3");

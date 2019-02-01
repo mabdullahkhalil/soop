@@ -20,7 +20,17 @@
         </activity>
         <activity android:name=".sliderActivity" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".studentCards"></activity>
+        <activity android:name=".studentCards" />
+        <activity
+            android:name=".quizzes"
+            android:theme="@style/AppThemeBar1" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".attendanceActivity"
+            android:theme="@style/AppThemeBar1"></activity>
     </application>
 
 </manifest>
