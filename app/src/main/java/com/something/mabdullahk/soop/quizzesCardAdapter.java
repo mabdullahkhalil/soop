@@ -40,11 +40,15 @@ public class quizzesCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
-        ((studentQuizCardViewHolder)holder).title.setText(studentQuizzesList.get(position).getTitle());
+
+        ((studentQuizCardViewHolder)holder).title.setText(studentQuizzesList.get(position).getTitle()+((studentQuizCardViewHolder)holder).title.getText());
         ((studentQuizCardViewHolder)holder).subject.setText(studentQuizzesList.get(position).getSubject());
         ((studentQuizCardViewHolder)holder).maximum.setText(studentQuizzesList.get(position).getMaximum_marks());
         ((studentQuizCardViewHolder)holder).average.setText(studentQuizzesList.get(position).getAverage());
         ((studentQuizCardViewHolder)holder).marks.setText(studentQuizzesList.get(position).getMarks_obtained()+"%");
+        ((studentQuizCardViewHolder)holder).title.measure(0,0);
+        System.out.println(((studentQuizCardViewHolder)holder).title.getWidth()+" is the widthh......");
+
     }
 
     @Override

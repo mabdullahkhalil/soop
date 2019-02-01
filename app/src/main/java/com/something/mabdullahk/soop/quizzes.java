@@ -31,7 +31,7 @@ public class quizzes extends AppCompatActivity {
         quizzes1 = new ArrayList<>();
 
 
-        quizzes1.add(new quizClass("Exam Term 1","Physics","23","100","43","50","50"));
+        quizzes1.add(new quizClass("Exam Term 1 Exam Term 1","Physics","23","100","43","50","50"));
         quizzes1.add(new quizClass("Exam Term 1","Physics","23","100","43","50","50"));
         quizzes1.add(new quizClass("Exam Term 1","Physics","23","100","43","50","50"));
 

@@ -5,13 +5,14 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:elevation="10dp"
-    android:orientation="horizontal"
-    android:background="@color/colorlogo1"
-    android:layout_marginTop="6dp"
+    android:orientation="vertical"
+    android:background="@android:color/white"
     android:id="@+id/cardQuiz">
 
-
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -25,21 +26,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/quizTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Physcis paper"
-            android:textSize="24sp"
-            />
+            android:fontFamily="@font/anton"
+            android:maxLength="15"
+            android:text="                                                             "
+            android:textColor="@color/colorlogo3"
+            android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/quizSubject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Physics"
-            android:textSize="16sp"
-            />
+            android:textColor="@color/colorlogo4"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -48,254 +55,96 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/colorlogo1"
+        android:background="@android:color/white"
         android:layout_marginLeft="6dp"
         android:layout_gravity="center"
         android:orientation="vertical">
+
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="MAX"
-        android:textColor="@android:color/white"
-        android:textSize="14sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@fon"
+            android:text="MAX"
+            android:textColor="@color/colorlogo3"
+            android:textSize="14sp" />
 
         <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/quizMax"
-        android:alpha=".5"
-        android:background="@android:color/white" />
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/quizMax"
+            android:alpha=".5"
+            android:background="@color/colorlogo3" />
 
 
         <TextView
-        android:id="@+id/quizMax"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="40"
-        android:textColor="@android:color/white"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+            android:id="@+id/quizMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="40"
+            android:textColor="@color/colorlogo3"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
-    <View
-        android:layout_width="1dp"
-        android:layout_height="20dp"
-        android:layout_gravity="center"
-        android:alpha=".5"
-        android:background="@android:color/white" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/colorlogo1"
+        android:background="@android:color/white"
         android:layout_gravity="center"
+        android:layout_marginLeft="8dp"
         android:orientation="vertical">
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="AVG"
-        android:textColor="@android:color/white"
-        android:textSize="14sp" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="AVG"
+            android:textColor="@color/colorlogo3"
+            android:textSize="14sp" />
 
         <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@id/quizAverage"
-        android:alpha=".5"
-        android:background="@android:color/white" />
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/quizAverage"
+            android:alpha=".5"
+            android:background="@color/colorlogo3" />
 
         <TextView
-        android:id="@+id/quizAverage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="40"
-        android:textColor="@android:color/white"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+            android:id="@+id/quizAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="40"
+            android:textColor="@color/colorlogo3"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
 
     <TextView
+        android:id="@+id/quizMarks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="8dp"
         android:textSize="28sp"
-        android:text="20%"
+        android:text="20"
+        android:textStyle="bold"
+        android:textColor="@color/colorlogo1"
         android:layout_gravity="center"
         android:layout_marginLeft="8dp"/>
 
+</LinearLayout>
 
 
-    <!--<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@color/colorlogo4">-->
-
-
-        <!--<TextView-->
-            <!--android:id="@+id/quizTitle"-->
-            <!--android:layout_width="0dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginStart="8dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:fontFamily="sans-serif-condensed"-->
-            <!--android:maxLength="13"-->
-            <!--android:text="Term Exam 1e11"-->
-            <!--android:textColor="@android:color/white"-->
-            <!--android:textSize="24sp"-->
-            <!--app:layout_constraintBottom_toTopOf="@+id/quizSubject"-->
-            <!--app:layout_constraintStart_toEndOf="@+id/studentImage"-->
-            <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-
-        <!--<TextView-->
-            <!--android:id="@+id/quizSubject"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="8dp"-->
-            <!--android:layout_marginStart="8dp"-->
-            <!--android:fontFamily="sans-serif-condensed"-->
-            <!--android:gravity="center"-->
-            <!--android:text="Physics"-->
-            <!--android:textColor="@android:color/white"-->
-            <!--android:textSize="16sp"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintStart_toEndOf="@+id/studentImage"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/quizTitle"-->
-            <!--app:layout_constraintVertical_bias="0.17000002" />-->
-
-        <!--<de.hdodenhof.circleimageview.CircleImageView-->
-            <!--android:id="@+id/studentImage"-->
-            <!--android:layout_width="60dp"-->
-            <!--android:layout_height="60dp"-->
-            <!--android:layout_marginBottom="8dp"-->
-            <!--android:layout_marginEnd="8dp"-->
-            <!--android:layout_marginStart="24dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:src="@drawable/picture"-->
-            <!--app:civ_border_color="@android:color/white"-->
-            <!--app:civ_border_width="0dp"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toStartOf="@+id/quizTitle"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-        <!--<LinearLayout-->
-            <!--android:id="@+id/textView"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="8dp"-->
-            <!--android:layout_marginEnd="12dp"-->
-            <!--android:layout_marginStart="8dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:orientation="vertical"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toStartOf="@+id/textView2"-->
-            <!--app:layout_constraintHorizontal_chainStyle="spread_inside"-->
-            <!--app:layout_constraintStart_toEndOf="@+id/quizTitle"-->
-            <!--app:layout_constraintTop_toTopOf="parent">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:text="MAX"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textSize="14sp" />-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="1dp"-->
-                <!--android:layout_above="@id/quizMax"-->
-                <!--android:alpha=".5"-->
-                <!--android:background="@android:color/white" />-->
-
-
-            <!--<TextView-->
-                <!--android:id="@+id/quizMax"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:text="40"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textSize="16dp"-->
-                <!--android:textStyle="bold" />-->
-
-
-        <!--</LinearLayout>-->
-
-
-        <!--<LinearLayout-->
-            <!--android:id="@+id/textView2"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="8dp"-->
-            <!--android:layout_marginEnd="8dp"-->
-            <!--android:layout_marginStart="8dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:gravity="center"-->
-            <!--android:orientation="vertical"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toStartOf="@+id/quizMarks"-->
-            <!--app:layout_constraintStart_toEndOf="@+id/textView"-->
-            <!--app:layout_constraintTop_toTopOf="parent">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:text="AVG"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textSize="14sp" />-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="1dp"-->
-                <!--android:layout_above="@id/quizAverage"-->
-                <!--android:alpha=".5"-->
-                <!--android:background="@android:color/white" />-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/quizAverage"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="center_horizontal"-->
-                <!--android:text="40"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textSize="16dp"-->
-                <!--android:textStyle="bold" />-->
-
-        <!--</LinearLayout>-->
-
-        <!--<TextView-->
-            <!--android:id="@+id/quizMarks"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginBottom="8dp"-->
-            <!--android:layout_marginEnd="8dp"-->
-            <!--android:layout_marginStart="28dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:fontFamily="sans-serif-condensed"-->
-            <!--android:gravity="center"-->
-            <!--android:text="200%"-->
-            <!--android:textColor="@color/colorlogo1"-->
-            <!--android:textSize="28sp"-->
-            <!--android:textStyle="bold"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toEndOf="@+id/textView2"-->
-            <!--app:layout_constraintTop_toTopOf="parent" />-->
-
-
-    <!--</android.support.constraint.ConstraintLayout>-->
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorlogo2"/>
 
 
 </LinearLayout>
