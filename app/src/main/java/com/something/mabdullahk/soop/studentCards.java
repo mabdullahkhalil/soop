@@ -19,6 +19,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.something.mabdullahk.soop.quizzes;
+import com.something.mabdullahk.soop.student;
+import com.something.mabdullahk.soop.studentCardAdapter;
+
+
 public class studentCards extends AppCompatActivity {
 
     RecyclerView recyclerView;
@@ -41,12 +46,22 @@ public class studentCards extends AppCompatActivity {
         layoutDot = (LinearLayout) findViewById(R.id.dotLayout1);
         viewPager = findViewById(R.id.view_pager_1);
 
-        LinearLayout layout = (LinearLayout) findViewById(R.id.quizlayout);
+        LinearLayout quizLayout = (LinearLayout) findViewById(R.id.quizlayout);
+        LinearLayout attendanceLayout = (LinearLayout) findViewById(R.id.attendanceLayout);
 
-        layout.setOnClickListener(new View.OnClickListener() {
+
+        quizLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(studentCards.this,quizzes.class));
+                startActivity(new Intent(studentCards.this, quizzes.class));
+            }
+        });
+
+
+        attendanceLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(studentCards.this, attendanceActivity.class));
             }
         });
 

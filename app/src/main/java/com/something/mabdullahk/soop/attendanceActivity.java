@@ -59,7 +59,6 @@ public class attendanceActivity extends AppCompatActivity {
             }
         });
 
-        //call refreshCalendar to update calendar the view
         calendarView.refreshCalendar(currentCalendar);
 
         //Handling custom calendar events
@@ -132,8 +131,20 @@ public class attendanceActivity extends AppCompatActivity {
                         dayView1.setBackgroundColor(color);
                     }
                 });
-            }
 
+            } else {
+                int color = Color.parseColor("#FFFFFF");
+                dayView.setBackgroundColor(color);
+                final DayView dayView1 = dayView;
+                dayView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int color = Color.parseColor("#FFFFFF");
+                        dayView1.setBackgroundColor(color);
+                    }
+                });
+
+            }
 
 
                 System.out.println("date is "+dayView.getDate());
