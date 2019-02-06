@@ -48,6 +48,7 @@ public class studentCards extends AppCompatActivity {
 
         LinearLayout quizLayout = (LinearLayout) findViewById(R.id.quizlayout);
         LinearLayout attendanceLayout = (LinearLayout) findViewById(R.id.attendanceLayout);
+        LinearLayout announcementLayout = (LinearLayout) findViewById(R.id.announcementLayout);
 
 
         quizLayout.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +58,6 @@ public class studentCards extends AppCompatActivity {
             }
         });
 
-
         attendanceLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +65,12 @@ public class studentCards extends AppCompatActivity {
             }
         });
 
+        announcementLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(studentCards.this, announcementActivity.class));
+            }
+        });
 
         student student_1 = new student("Ibrahim Waqas","Class 1 Section A","1","2","3");
         student student_2 = new student("Ibrahim Waqas","Class 1 Section A","1","2","3");

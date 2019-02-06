@@ -21,13 +21,13 @@ public class quizzes extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.quizzesRecyclerView);
 
-        GridLayoutManager foodMenuGrid = new GridLayoutManager(quizzes.this, 1);
+        GridLayoutManager quizzesGrid = new GridLayoutManager(quizzes.this, 1);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Quizzes");
         getSupportActionBar().setLogo(R.drawable.ic_quiz);
 
 
-        recyclerView.setLayoutManager(foodMenuGrid);
+        recyclerView.setLayoutManager(quizzesGrid);
         quizzes1 = new ArrayList<>();
 
 

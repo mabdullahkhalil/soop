@@ -29,7 +29,10 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".attendanceActivity"
+        <activity
+            android:name=".attendanceActivity"
+            android:theme="@style/AppThemeBar1" />
+        <activity android:name=".announcementActivity"
             android:theme="@style/AppThemeBar1"></activity>
     </application>
 

@@ -40,6 +40,7 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
+                    android:id="@+id/announcementLayout"
                     android:background="@drawable/border1"
                     android:orientation="vertical" >
 
