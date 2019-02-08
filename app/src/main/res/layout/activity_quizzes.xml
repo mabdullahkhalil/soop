@@ -8,8 +8,35 @@
     android:background="@android:color/white"
     tools:context="com.something.mabdullahk.soop.quizzes">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/quizzesMessage">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/illustration_quiz"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorlogo4"
+            android:text="Oops! There are no results to show yet. We'll keep digging to find them so please check back later."/>
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
+        android:id="@+id/quizzesScroll"
+        android:visibility="invisible"
         android:layout_height="match_parent">
 
         <LinearLayout
