@@ -25,7 +25,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class LoginPage extends AppCompatActivity {
@@ -33,7 +36,7 @@ public class LoginPage extends AppCompatActivity {
     EditText rollNumber;
     Button login;
     SimpleArcDialog mDialog ;
-
+    List<student> childrenList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,8 @@ public class LoginPage extends AppCompatActivity {
 
         rollNumber = (EditText)findViewById(R.id.rollNumber);
         login      = (Button)findViewById(R.id.loginButton);
+        childrenList= new ArrayList<>();
+
 
         ArcConfiguration configuration = new ArcConfiguration(this);
         configuration.setLoaderStyle(SimpleArcLoader.STYLE.SIMPLE_ARC);
@@ -107,12 +112,19 @@ public class LoginPage extends AppCompatActivity {
                     if (success){
                         JSONObject studentsData = students.getJSONObject("data");
 
-                        JSONArray foods = studentsData.getJSONArray("children");
+                        JSONArray childrenData= studentsData.getJSONArray("children");
 
 
+                        for(int i=0; i < childrenData.length() ; i++){
+                            JSONObject children = childrenData.getJSONObject(i);
+                            childrenList.add(new student(children.getString("name"), children.getString("roll_number"), children.getString("id"), children.getString("class_name"),children.getString("attendance"), children.getString("quizzes"), children.getString("notes"), children.getString("announcements")));
+                        }
+
+                        System.out.println("student list ..."+childrenList);
                         mDialog.dismiss();
                         Intent intent = new Intent(LoginPage.this,
                                 studentCards.class);
+                        intent.putExtra("allChildrenData", (Serializable) childrenList);
                         startActivity(intent);
                     }
 
@@ -120,9 +132,6 @@ public class LoginPage extends AppCompatActivity {
                         mDialog.dismiss();
                         rollNumber.setText("");
                         rollNumber.setError("Enter correct roll number to continue.");
-                        Intent intent = new Intent(LoginPage.this,
-                                studentCards.class);
-                        startActivity(intent);
 
                     }
 

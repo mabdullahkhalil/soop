@@ -56,6 +56,9 @@ public class studentCardAdapter extends PagerAdapter {
         View v = inflater.inflate(layouts[position], container, false);
         TextView name=(TextView)v.findViewById(R.id.studentName);
         name.setText(myStudents.get(position).getName());
+
+        TextView grade = (TextView)v.findViewById(R.id.studentClass) ;
+        grade.setText(myStudents.get(position).getGrade());
         container.addView(v);
         return v;
     }
@@ -69,18 +72,18 @@ public class studentCardAdapter extends PagerAdapter {
 
 
 
-
-class StudentCardViewHolder extends RecyclerView.ViewHolder{
-    TextView studentName;
-    TextView studentClass;
-
-
-    public StudentCardViewHolder(View itemView) {
-        super(itemView);
-
-        studentName = itemView.findViewById(R.id.studentName);
-        studentClass = itemView.findViewById(R.id.studentClass);
-
-    }
-}
+//
+//class StudentCardViewHolder extends RecyclerView.ViewHolder{
+//    TextView studentName;
+//    TextView studentClass;
+//
+//
+//    public StudentCardViewHolder(View itemView) {
+//        super(itemView);
+//
+//        studentName = itemView.findViewById(R.id.studentName);
+//        studentClass = itemView.findViewById(R.id.studentClass);
+//
+//    }
+//}
 
