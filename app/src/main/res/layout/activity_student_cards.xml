@@ -13,7 +13,7 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/view_pager_1"
             android:layout_width="match_parent"
-            android:layout_height="240dp" >
+            android:layout_height="220dp" >
         </android.support.v4.view.ViewPager>
 
 
@@ -40,6 +40,8 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
+                    android:elevation="4dp"
+                    android:id="@+id/announcementLayout"
                     android:background="@drawable/border1"
                     android:orientation="vertical" >
 
@@ -68,9 +70,11 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:layout_marginLeft="8dp"
+                    android:elevation="4dp"
                     android:layout_marginRight="8dp"
                     android:background="@drawable/border2"
                     android:orientation="vertical" >
+
 
                         <ImageView
                             android:layout_width="fill_parent"
@@ -105,32 +109,34 @@
             android:orientation="horizontal" >
 
                 <LinearLayout
+                    android:id="@+id/attendanceLayout"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_weight="1"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:elevation="4dp"
                     android:background="@drawable/border3"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                         <ImageView
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
-                            android:layout_marginRight="8dp"
                             android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_weight="1"
-                            android:src="@drawable/ic_attendance"/>
+                            android:src="@drawable/ic_attendance" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:text="Attendance"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorlogo3"
-                        android:gravity="center"/>
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Attendance"
+                            android:textColor="@color/colorlogo3"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
 
 
                 </LinearLayout>
@@ -142,6 +148,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
+                    android:elevation="4dp"
                     android:layout_weight="1"
                     android:background="@drawable/border4"
                     android:orientation="vertical">
@@ -164,6 +171,76 @@
                             android:textColor="@color/colorlogo4"
                             android:textSize="18dp"
                             android:textStyle="bold" />
+
+
+                </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:elevation="4dp"
+                    android:id="@+id/academicCalendarLayout"
+                    android:background="@drawable/border1"
+                    android:orientation="vertical" >
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_calendar"/>
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:text="Calendar"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorlogo1"
+                            android:gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:elevation="4dp"
+                    android:background="@drawable/border2"
+                    android:orientation="vertical" >
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_test"/>
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1"
+                            android:text="Exam Results"
+                            android:textSize="18dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorlogo2"
+                            android:gravity="center"/>
 
 
                 </LinearLayout>

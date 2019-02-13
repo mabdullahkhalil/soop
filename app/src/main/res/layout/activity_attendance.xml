@@ -5,36 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@android:color/white"
     tools:context="com.something.mabdullahk.soop.attendanceActivity">
 
 
 
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1">
-
-        <com.imanoweb.calendarview.CustomCalendarView
-            android:id="@+id/calendar_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#ffffff">
-        </com.imanoweb.calendarview.CustomCalendarView>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_weight="1">
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/border4"
+        android:gravity="center">
 
 
 
@@ -50,7 +34,7 @@
                 android:text="8"
                 android:gravity="center"
                 android:textColor="@android:color/holo_orange_light"
-                android:textSize="48sp"/>
+                android:textSize="40sp"/>
 
 
             <TextView
@@ -60,14 +44,14 @@
                 android:text="Leave"
                 android:textStyle="bold"
                 android:textColor="@android:color/holo_orange_light"
-                android:textSize="24sp"/>
+                android:textSize="20sp"/>
 
 
 
         </LinearLayout>
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="2dp"
             android:layout_height="100dp"
             android:alpha=".5"
             android:background="@color/colorlogo3" />
@@ -84,7 +68,7 @@
                 android:text="18"
                 android:gravity="center"
                 android:textColor="@android:color/holo_green_light"
-                android:textSize="48sp"/>
+                android:textSize="40sp"/>
 
 
 
@@ -95,14 +79,14 @@
                 android:text="Present"
                 android:textColor="@android:color/holo_green_light"
                 android:textStyle="bold"
-                android:textSize="24sp"/>
+                android:textSize="20sp"/>
 
 
 
         </LinearLayout>
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="2dp"
             android:layout_height="100dp"
             android:alpha=".5"
             android:background="@color/colorlogo3" />
@@ -118,7 +102,7 @@
                 android:text="8"
                 android:gravity="center"
                 android:textColor="@android:color/holo_red_light"
-                android:textSize="48sp"/>
+                android:textSize="40sp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -127,7 +111,7 @@
                 android:text="Absent"
                 android:textStyle="bold"
                 android:textColor="@android:color/holo_red_light"
-                android:textSize="24sp"/>
+                android:textSize="20sp"/>
 
 
 
@@ -136,6 +120,27 @@
 
 
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1">
+
+        <com.imanoweb.calendarview.CustomCalendarView
+            android:id="@+id/calendar_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#ffffff">
+        </com.imanoweb.calendarview.CustomCalendarView>
+
+    </LinearLayout>
+
+
+
 
 
 

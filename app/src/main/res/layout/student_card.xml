@@ -13,15 +13,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:background="@drawable/image_background"
-        android:layout_height="240dp">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/studentName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
             android:gravity="center"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="130dp"
             android:text="Muhammad Abdullah"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
@@ -34,12 +32,12 @@
             android:id="@+id/studentClass"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
             android:gravity="center"
             android:text="Class 1 Section A"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/studentName" />

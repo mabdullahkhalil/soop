@@ -5,25 +5,43 @@ package com.something.mabdullahk.soop;
  */
 
 public class quizClass {
+    String Id;
+    String date;
     String title;
     String subject;
     String average;
     String total_marks;
     String maximum_marks;
     String marks_obtained;
-    String percentage;
 
 
-    public quizClass(String title, String subject, String average, String total_marks, String maximum_marks, String marks_obtained, String percentage) {
+    public quizClass(String id, String date, String title, String subject, String average, String total_marks, String maximum_marks, String marks_obtained) {
+        Id = id;
+        this.date = date;
         this.title = title;
         this.subject = subject;
         this.average = average;
         this.total_marks = total_marks;
         this.maximum_marks = maximum_marks;
         this.marks_obtained = marks_obtained;
-        this.percentage = percentage;
     }
 
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 
     public String getTitle() {
         return title;
@@ -71,13 +89,5 @@ public class quizClass {
 
     public void setMarks_obtained(String marks_obtained) {
         this.marks_obtained = marks_obtained;
-    }
-
-    public String getPercentage() {
-        return percentage;
-    }
-
-    public void setPercentage(String percentage) {
-        this.percentage = percentage;
     }
 }

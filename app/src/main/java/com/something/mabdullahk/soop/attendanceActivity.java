@@ -15,18 +15,33 @@ import com.imanoweb.calendarview.CalendarListener;
 import com.imanoweb.calendarview.CustomCalendarView;
 import com.imanoweb.calendarview.DayDecorator;
 import com.imanoweb.calendarview.DayView;
+import com.leo.simplearcloader.ArcConfiguration;
+import com.leo.simplearcloader.SimpleArcDialog;
+import com.leo.simplearcloader.SimpleArcLoader;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 public class attendanceActivity extends AppCompatActivity {
 
 
 
     CustomCalendarView calendarView;
+    SimpleArcDialog mDialog ;
+    attendanceDates attendanceDatesList;
+    String studentId;
+    Calendar currentCalendar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +51,25 @@ public class attendanceActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Attendance");
 
+        ArcConfiguration configuration = new ArcConfiguration(this);
+        configuration.setLoaderStyle(SimpleArcLoader.STYLE.SIMPLE_ARC);
+        configuration.setText("Fetching Data..");
+        int[] colors = new int[]{R.color.colorlogo1,R.color.colorlogo2,R.color.colorlogo3,R.color.colorlogo4};
+        configuration.setColors(colors);
+        configuration.setAnimationSpeed(SimpleArcLoader.SPEED_MEDIUM);
+
+
+        mDialog = new SimpleArcDialog(this);
+        mDialog.setConfiguration(configuration);
+        studentId = (String) getIntent().getStringExtra("studentID");
+//        attendanceDatesList = new ArrayList<>();
+
+
 
         calendarView = (CustomCalendarView) findViewById(R.id.calendar_view);
 
         //Initialize calendar with date
-        Calendar currentCalendar = Calendar.getInstance(Locale.getDefault());
+        currentCalendar = Calendar.getInstance(Locale.getDefault());
 
         //Show monday as first date of week
         calendarView.setFirstDayOfWeek(Calendar.MONDAY);
@@ -59,7 +88,6 @@ public class attendanceActivity extends AppCompatActivity {
             }
         });
 
-        //call refreshCalendar to update calendar the view
         calendarView.refreshCalendar(currentCalendar);
 
         //Handling custom calendar events
@@ -84,16 +112,18 @@ public class attendanceActivity extends AppCompatActivity {
 
 
         //adding calendar day decorators
-        List<String> putdates = new ArrayList<>();
-        putdates.add("01-02-2019");
-        putdates.add("01-01-2019");
-        putdates.add("03-02-2019");
-        putdates.add("02-02-2019");
-        List<DayDecorator> decorators = new ArrayList<>();
-        decorators.add(new DisabledColorDecorator(putdates));
-        calendarView.setDecorators(decorators);
-        calendarView.refreshCalendar(currentCalendar);
-        System.out.println(decorators.size()+" is the size....");
+
+
+        getDates();
+
+
+
+
+//        putdates.add("01-02-2019");
+//        putdates.add("01-01-2019");
+//        putdates.add("03-02-2019");
+//        putdates.add("02-02-2019");
+
     }
 
     @Override
@@ -108,39 +138,140 @@ public class attendanceActivity extends AppCompatActivity {
     private class DisabledColorDecorator implements DayDecorator {
 
         List<String> dates;
+        List<String> attended;
 
 
-        DisabledColorDecorator(List<String> dates){
+        DisabledColorDecorator(List<String> dates, List<String> attended){
             this.dates = dates;
+            this.attended = attended;
         }
         @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         public void decorate(DayView dayView) {
 
 
-            SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             String date = df.format(dayView.getDate());
 
             if (dates.contains(date)){
-                int color = Color.parseColor("#FAA60E");
+
+                int color = 0;
+                final DayView dayView1;
+                int index = dates.indexOf(date);
+               switch (attended.get(index)){
+                   case "yes":
+                       color = Color.parseColor("#ff99cc00");
+                       break;
+                   case "no":
+                       color = Color.parseColor("#ffff4444");
+
+                       break;
+                   case "on_leave":
+                       color = Color.parseColor("#ffffbb33");
+                       break;
+                   default:
+                       color = Color.parseColor("#FFFFFF");
+                       break;
+
+
+               }
+
+                final int color1 = color;
+                dayView.setBackgroundColor(color);
+                dayView1 = dayView;
+                dayView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dayView1.setBackgroundColor(color1);
+                    }
+                });
+
+            } else {
+                int color = Color.parseColor("#FFFFFF");
                 dayView.setBackgroundColor(color);
                 final DayView dayView1 = dayView;
                 dayView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        int color = Color.parseColor("#FAA60E");
+                        int color = Color.parseColor("#FFFFFF");
                         dayView1.setBackgroundColor(color);
                     }
                 });
+
             }
-
-
 
                 System.out.println("date is "+dayView.getDate());
 
         }
 
 
+
+    }
+
+
+
+    private void getDates(){
+
+        mDialog.show();
+        Map<String, String> params = new HashMap<>();
+        Map<String, String> headers = new HashMap<>();
+        final List<quizClass> temp_quizzesList = new ArrayList<>();
+
+
+        HTTPrequest.placeRequest("https://soop-staging.herokuapp.com/api/v1/parents/children/" + studentId + "/attendance?query=0", "Get", params, headers, new HTTPrequest.VolleyCallback() {
+            @Override
+            public void onSuccess(String result) {
+
+                try {
+                    JSONObject students = new JSONObject(result);
+                    Boolean success = students.getBoolean("success");
+
+                    if (success){
+                        JSONArray studentsData = students.getJSONObject("data").getJSONArray("attendance");
+                        List<String> atDates = new ArrayList<>();
+                        List<String> atAttended = new ArrayList<>();
+
+                        for(int i=0; i < studentsData.length() ; i++) {
+                            JSONObject atDate = studentsData.getJSONObject(i);
+
+                            atDates.add(atDate.getString("date"));
+                            atAttended.add(atDate.getString("attended"));
+                        }
+
+
+                        attendanceDatesList = new attendanceDates(atDates,atAttended);
+                        System.out.println(attendanceDatesList+ " is the quiz list.");
+                        if (atDates.size() > 0){
+                            mDialog.dismiss();
+
+                            List<DayDecorator> decorators = new ArrayList<>();
+                            decorators.add(new DisabledColorDecorator(atDates,atAttended));
+                            calendarView.setDecorators(decorators);
+                            calendarView.refreshCalendar(currentCalendar);
+                            System.out.println(decorators.size()+" is the size....");
+//                            quizzesMainView.removeView(quizzesmsg);
+//                            quizzesCardAdapter myAdapter = new quizzesCardAdapter(attendanceActivity.this, attendanceDatesList);
+//                            recyclerView.setAdapter(myAdapter);
+                        } else {
+                            mDialog.dismiss();
+//                            quizzesMainView.removeView(quizzesScroll);
+//                            quizzesmsg.setVisibility(View.VISIBLE);
+                        }
+
+                    }
+                }catch (JSONException e){
+                    System.out.println("JSON ERROR IN QUIZZES.ajva"+e);
+                }
+            }
+
+            @Override
+            public void onFaliure(String faliure) {
+                System.out.println("it failed i quizzes.java");
+                mDialog.dismiss();
+//                quizzesMainView.removeView(quizzesScroll);
+//                quizzesmsg.setVisibility(View.VISIBLE);
+            }
+        },this);
 
     }
 
