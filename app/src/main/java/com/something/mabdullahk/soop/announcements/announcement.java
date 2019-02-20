@@ -1,4 +1,4 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.announcements;
 
 /**
  * Created by mabdullahk on 06/02/2019.

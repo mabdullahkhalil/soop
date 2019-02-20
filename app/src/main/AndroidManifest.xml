@@ -11,6 +11,11 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".payments.paymentsActivity"
+            android:theme="@style/AppThemeBar1"></activity>
+        <activity
+            android:name=".events.eventsActivity"
+            android:theme="@style/AppThemeBar1" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,11 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sliderActivity" />
+        <activity android:name=".IntroPages.sliderActivity" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".studentCards" />
+        <activity android:name=".students.studentCards" />
         <activity
-            android:name=".quizzes"
+            android:name=".quizzes.quizzes"
             android:theme="@style/AppThemeBar1" />
 
         <meta-data
@@ -30,10 +35,11 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".attendanceActivity"
+            android:name=".attendance.attendanceActivity"
             android:theme="@style/AppThemeBar1" />
-        <activity android:name=".announcementActivity"
-            android:theme="@style/AppThemeBar1"></activity>
+        <activity
+            android:name=".announcements.announcementActivity"
+            android:theme="@style/AppThemeBar1" />
     </application>
 
 </manifest>

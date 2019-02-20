@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/Apptheme2"
-    tools:context="com.something.mabdullahk.soop.studentCards">
+    tools:context="com.something.mabdullahk.soop.students.studentCards">
 
 
 
@@ -190,7 +190,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
                     android:elevation="4dp"
-                    android:id="@+id/academicCalendarLayout"
+                    android:id="@+id/eventsLayout"
                     android:background="@drawable/border1"
                     android:orientation="vertical" >
 
@@ -206,7 +206,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:layout_weight="1"
-                            android:text="Calendar"
+                            android:text="Events"
                             android:textSize="18dp"
                             android:textStyle="bold"
                             android:textColor="@color/colorlogo1"
@@ -215,6 +215,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/paymentsLayout"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
@@ -231,12 +232,12 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_weight="1"
-                            android:src="@drawable/ic_test"/>
+                            android:src="@drawable/ic_teaching"/>
                         <TextView
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:layout_weight="1"
-                            android:text="Exam Results"
+                            android:text="Payments"
                             android:textSize="18dp"
                             android:textStyle="bold"
                             android:textColor="@color/colorlogo2"

@@ -1,4 +1,4 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.IntroPages;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.something.mabdullahk.soop.LoginPage;
+import com.something.mabdullahk.soop.R;
 
 
 public class sliderActivity extends AppCompatActivity {
