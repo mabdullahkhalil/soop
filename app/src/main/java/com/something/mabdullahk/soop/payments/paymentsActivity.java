@@ -70,8 +70,17 @@ public class paymentsActivity extends AppCompatActivity {
 //        paymentsCardAdapter myAdapter = new paymentsCardAdapter(paymentsActivity.this, payments);
 //        recyclerView.setAdapter(myAdapter);
 
+        payments.add(new paymentsClass("Feburary","-","0","3000","Not Paid"));
+        payments.add(new paymentsClass("January","23rd January, 2019","1450","1550","Partially Paid"));
+        payments.add(new paymentsClass("December","13th December, 2018","3000","0","Paid"));
+        payments.add(new paymentsClass("November","9th November, 2018","1500","0","Paid"));
+        payments.add(new paymentsClass("October","16th October, 2018","1600","0","Paid"));
+        payments.add(new paymentsClass("September","1st September, 2018","2900","0","Paid"));
 
-        getPayments();
+        paymentsCardAdapter myAdapter = new paymentsCardAdapter(paymentsActivity.this, payments);
+        recyclerView.setAdapter(myAdapter);
+
+//        getPayments();
 
     }
 

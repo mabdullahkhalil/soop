@@ -1,6 +1,7 @@
 package com.something.mabdullahk.soop.payments;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,19 @@ public class paymentsCardAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         ((paymentsCardViewHolder)holder).amountPaid.setText(paymentsList.get(position).getAmountPaid());
         ((paymentsCardViewHolder)holder).amountRemaining.setText(paymentsList.get(position).getAmountRemaining());
         ((paymentsCardViewHolder)holder).status.setText(paymentsList.get(position).getStatus());
+        String status = paymentsList.get(position).getStatus();
+        switch (status){
+            case "Paid":
+                ((paymentsCardViewHolder)holder).status.setTextColor(Color.parseColor("#32CD32"));
+                break;
+            case "Not Paid":
+                ((paymentsCardViewHolder)holder).status.setTextColor(Color.parseColor("#FF0000"));
+                break;
+            case "Partially Paid":
+                ((paymentsCardViewHolder)holder).status.setTextColor(Color.parseColor("#FFA500"));
+                break;
+
+        }
 
 
     }

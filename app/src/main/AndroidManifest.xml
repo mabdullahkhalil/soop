@@ -11,8 +11,11 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".payments.paymentsActivity"
+        <activity android:name=".resources.resourcesActivity"
             android:theme="@style/AppThemeBar1"></activity>
+        <activity
+            android:name=".payments.paymentsActivity"
+            android:theme="@style/AppThemeBar1" />
         <activity
             android:name=".events.eventsActivity"
             android:theme="@style/AppThemeBar1" />

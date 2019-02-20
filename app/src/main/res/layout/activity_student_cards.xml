@@ -66,6 +66,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/resourcesLayout"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
@@ -88,7 +89,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:text="Notes"
+                        android:text="Resources"
                         android:textSize="18dp"
                         android:textStyle="bold"
                         android:textColor="@color/colorlogo2"
