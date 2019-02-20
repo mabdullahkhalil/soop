@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".events.eventsActivity"
+            android:theme="@style/AppThemeBar1" ></activity>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +34,9 @@
         <activity
             android:name=".attendanceActivity"
             android:theme="@style/AppThemeBar1" />
-        <activity android:name=".announcementActivity"
-            android:theme="@style/AppThemeBar1"></activity>
+        <activity
+            android:name=".announcementActivity"
+            android:theme="@style/AppThemeBar1" />
     </application>
 
 </manifest>

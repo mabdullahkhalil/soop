@@ -190,7 +190,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
                     android:elevation="4dp"
-                    android:id="@+id/academicCalendarLayout"
+                    android:id="@+id/eventsLayout"
                     android:background="@drawable/border1"
                     android:orientation="vertical" >
 
@@ -206,7 +206,7 @@
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:layout_weight="1"
-                            android:text="Calendar"
+                            android:text="Events"
                             android:textSize="18dp"
                             android:textStyle="bold"
                             android:textColor="@color/colorlogo1"
