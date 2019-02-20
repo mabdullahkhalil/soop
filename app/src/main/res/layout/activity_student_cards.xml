@@ -215,6 +215,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/paymentsLayout"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
@@ -231,12 +232,12 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_weight="1"
-                            android:src="@drawable/ic_test"/>
+                            android:src="@drawable/ic_teaching"/>
                         <TextView
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
                             android:layout_weight="1"
-                            android:text="Exam Results"
+                            android:text="Payments"
                             android:textSize="18dp"
                             android:textStyle="bold"
                             android:textColor="@color/colorlogo2"
