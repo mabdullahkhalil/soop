@@ -1,4 +1,4 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.attendance;
 
 import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 
 import com.imanoweb.calendarview.CalendarListener;
@@ -18,13 +17,15 @@ import com.imanoweb.calendarview.DayView;
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
 import com.leo.simplearcloader.SimpleArcLoader;
+import com.something.mabdullahk.soop.HTTPrequest;
+import com.something.mabdullahk.soop.R;
+import com.something.mabdullahk.soop.quizzes.quizClass;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;

@@ -20,11 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sliderActivity" />
+        <activity android:name=".IntroPages.sliderActivity" />
         <activity android:name=".LoginPage" />
-        <activity android:name=".studentCards" />
+        <activity android:name=".students.studentCards" />
         <activity
-            android:name=".quizzes"
+            android:name=".quizzes.quizzes"
             android:theme="@style/AppThemeBar1" />
 
         <meta-data
@@ -32,10 +32,10 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name=".attendanceActivity"
+            android:name=".attendance.attendanceActivity"
             android:theme="@style/AppThemeBar1" />
         <activity
-            android:name=".announcementActivity"
+            android:name=".announcements.announcementActivity"
             android:theme="@style/AppThemeBar1" />
     </application>
 

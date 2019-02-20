@@ -1,4 +1,4 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.students;
 
 import java.io.Serializable;
 

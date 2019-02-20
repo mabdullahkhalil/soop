@@ -1,16 +1,13 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.quizzes;
 
 import android.app.Activity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.something.mabdullahk.soop.R;
 
 import java.util.List;
 

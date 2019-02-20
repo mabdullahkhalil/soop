@@ -1,4 +1,4 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.quizzes;
 
 /**
  * Created by mabdullahk on 31/01/2019.

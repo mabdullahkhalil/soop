@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:id="@+id/quizzesMainView"
     android:background="@android:color/white"
-    tools:context="com.something.mabdullahk.soop.quizzes">
+    tools:context="com.something.mabdullahk.soop.quizzes.quizzes">
 
     <LinearLayout
         android:layout_width="match_parent"

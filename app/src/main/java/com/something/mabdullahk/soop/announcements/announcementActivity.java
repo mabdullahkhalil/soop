@@ -1,15 +1,17 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.announcements;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
 import com.leo.simplearcloader.SimpleArcLoader;
+import com.something.mabdullahk.soop.HTTPrequest;
+import com.something.mabdullahk.soop.R;
+import com.something.mabdullahk.soop.quizzes.quizClass;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,26 +1,14 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.students;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.graphics.Rect;
-import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.something.mabdullahk.soop.R;
+
 import java.util.List;
 
 /**
@@ -71,19 +59,4 @@ public class studentCardAdapter extends PagerAdapter {
 }
 
 
-
-//
-//class StudentCardViewHolder extends RecyclerView.ViewHolder{
-//    TextView studentName;
-//    TextView studentClass;
-//
-//
-//    public StudentCardViewHolder(View itemView) {
-//        super(itemView);
-//
-//        studentName = itemView.findViewById(R.id.studentName);
-//        studentClass = itemView.findViewById(R.id.studentClass);
-//
-//    }
-//}
 

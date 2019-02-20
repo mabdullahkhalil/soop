@@ -1,4 +1,4 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.IntroPages;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
