@@ -14,7 +14,7 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/view_pager_1"
                 android:layout_width="match_parent"
-                android:layout_height="180dp" >
+                android:layout_height="220dp" >
             </android.support.v4.view.ViewPager>
 
 

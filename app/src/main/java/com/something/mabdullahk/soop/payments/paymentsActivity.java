@@ -60,27 +60,18 @@ public class paymentsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(paymentsGrid);
         payments = new ArrayList<>();
 
-//
-//        payments.add(new paymentsClass("Trip to SOS", "13 Jan, 2019", "2 days to go", "social_activity", "A trip is planned to SOS village for social working skills of the children."));
-//        payments.add(new paymentsClass("October meeting", "9 Jan, 2019", "Passed", "parent_teacher_meeting", "It is mandatory for all the parents to attend the ptm as December tests performance of their chidlren would be discussed."));
-//        payments.add(new paymentsClass("Midterm Exam 2019", "10 Jan, 2019", "9 days to go", "exams", "Let the games begin of the october exams."));
-//        payments.add(new paymentsClass("Pakistan Revolution Holiday", "23 March, 2019", "2 months to go", "holiday", "CHildren be patriotic and understand the meaning behind this holiday. it plays an important role in the history of pakistan by quaid-e-Azam Muhammad Ali Jinnah."));
-//
+
+//        payments.add(new paymentsClass("Feburary","-","0","3000","Not Paid"));
+//        payments.add(new paymentsClass("January","23rd January, 2019","1450","1550","Partially Paid"));
+//        payments.add(new paymentsClass("December","13th December, 2018","3000","0","Paid"));
+//        payments.add(new paymentsClass("November","9th November, 2018","1500","0","Paid"));
+//        payments.add(new paymentsClass("October","16th October, 2018","1600","0","Paid"));
+//        payments.add(new paymentsClass("September","1st September, 2018","2900","0","Paid"));
 //
 //        paymentsCardAdapter myAdapter = new paymentsCardAdapter(paymentsActivity.this, payments);
 //        recyclerView.setAdapter(myAdapter);
 
-        payments.add(new paymentsClass("Feburary","-","0","3000","Not Paid"));
-        payments.add(new paymentsClass("January","23rd January, 2019","1450","1550","Partially Paid"));
-        payments.add(new paymentsClass("December","13th December, 2018","3000","0","Paid"));
-        payments.add(new paymentsClass("November","9th November, 2018","1500","0","Paid"));
-        payments.add(new paymentsClass("October","16th October, 2018","1600","0","Paid"));
-        payments.add(new paymentsClass("September","1st September, 2018","2900","0","Paid"));
-
-        paymentsCardAdapter myAdapter = new paymentsCardAdapter(paymentsActivity.this, payments);
-        recyclerView.setAdapter(myAdapter);
-
-//        getPayments();
+        getPayments();
 
     }
 
