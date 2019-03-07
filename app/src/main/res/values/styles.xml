@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorlogo1</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorlogo2</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -34,6 +34,8 @@
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
-
+    <style name="AppTheme33" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimaryDark">@color/colorlogo2</item>
+    </style>
 
 </resources>

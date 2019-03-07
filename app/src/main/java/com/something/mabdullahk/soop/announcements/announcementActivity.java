@@ -57,18 +57,18 @@ public class announcementActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(announcementsGrid);
         announcements = new ArrayList<>();
 
+//
+//        announcements.add(new announcement("Abdullah Khalil","Physics Quiz", "11 January,2019 - 11:59pm", "The mean marks of the quiz were 15. The class performed well overall."));
+//        announcements.add(new announcement("Hamza Altaf","Urdu Homework", "15 Feburary,2019 - 10:07am", "The homework is due tomorrow morning."));
+//        announcements.add(new announcement("Qasim Anjum","Artifical Intelligence", "19 Feburary,2019 - 10:07am", "This is the simplest illustration of the basic idea of backprop algorithm. It does not involve matrix nor vectors. It only involves derivatives against scalars. Very good for starters."));
+//        announcements.add(new announcement("Abdullah Khalil","Physics Quiz", "11 January,2019 - 11:59pm", "The mean marks of the quiz were 15. The class performed well overall."));
+//        announcements.add(new announcement("Hamza Altaf","Urdu Homework", "15 Feburary,2019 - 10:07am", "The homework is due tomorrow morning."));
+//        announcements.add(new announcement("Qasim Anjum","Artifical Intelligence", "19 Feburary,2019 - 10:07am", "This is the simplest illustration of the basic idea of backprop algorithm. It does not involve matrix nor vectors. It only involves derivatives against scalars. Very good for starters."));
+//        announcementAdapter myAdapter = new announcementAdapter(announcementActivity.this,announcements);
+//        recyclerView.setAdapter(myAdapter);
 
-        announcements.add(new announcement("Abdullah Khalil","Physics Quiz", "11 January,2019 - 11:59pm", "The mean marks of the quiz were 15. The class performed well overall."));
-        announcements.add(new announcement("Hamza Altaf","Urdu Homework", "15 Feburary,2019 - 10:07am", "The homework is due tomorrow morning."));
-        announcements.add(new announcement("Qasim Anjum","Artifical Intelligence", "19 Feburary,2019 - 10:07am", "This is the simplest illustration of the basic idea of backprop algorithm. It does not involve matrix nor vectors. It only involves derivatives against scalars. Very good for starters."));
-        announcements.add(new announcement("Abdullah Khalil","Physics Quiz", "11 January,2019 - 11:59pm", "The mean marks of the quiz were 15. The class performed well overall."));
-        announcements.add(new announcement("Hamza Altaf","Urdu Homework", "15 Feburary,2019 - 10:07am", "The homework is due tomorrow morning."));
-        announcements.add(new announcement("Qasim Anjum","Artifical Intelligence", "19 Feburary,2019 - 10:07am", "This is the simplest illustration of the basic idea of backprop algorithm. It does not involve matrix nor vectors. It only involves derivatives against scalars. Very good for starters."));
-        announcementAdapter myAdapter = new announcementAdapter(announcementActivity.this,announcements);
-        recyclerView.setAdapter(myAdapter);
 
-
-//        getAnnouncemnets();
+        getAnnouncemnets();
 
     }
 
