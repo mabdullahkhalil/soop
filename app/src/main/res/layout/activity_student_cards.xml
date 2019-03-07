@@ -1,255 +1,564 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:theme="@style/Apptheme2"
-    tools:context="com.something.mabdullahk.soop.students.studentCards">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:theme="@style/Apptheme2"
+        android:background="#ededed"
+        tools:context="com.something.mabdullahk.soop.students.studentCards">
 
 
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/view_pager_1"
-            android:layout_width="match_parent"
-            android:layout_height="220dp" >
-        </android.support.v4.view.ViewPager>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager_1"
+                android:layout_width="match_parent"
+                android:layout_height="180dp" >
+            </android.support.v4.view.ViewPager>
 
 
-                <LinearLayout
-                    android:id="@+id/dotLayout1"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="18dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-                </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/dotLayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@android:color/transparent"
+                        android:orientation="horizontal">
+                    </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_layout_studentcards"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="1"
-                    android:elevation="4dp"
+                    <LinearLayout
                     android:id="@+id/announcementLayout"
-                    android:background="@drawable/border1"
-                    android:orientation="vertical" >
+                    android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/border1"
+                        android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_announcement"/>
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:text="Announcement"
-                            android:textSize="18dp"
-                            android:textStyle="bold"
-                            android:textColor="@color/colorlogo1"
-                            android:gravity="center"/>
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_announcement"/>
 
-                </LinearLayout>
 
-                <LinearLayout
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Announcements"
+                                        android:textSize="18sp"
+                                        android:textColor="@color/black"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Teacher"
+                                        android:textSize="12sp"/>
+
+
+
+                            </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
                     android:id="@+id/resourcesLayout"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="8dp"
-                    android:elevation="4dp"
-                    android:layout_marginRight="8dp"
-                    android:background="@drawable/border2"
-                    android:orientation="vertical" >
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border1"
+                android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_notepad"/>
 
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_notepad"/>
-                    <TextView
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Resources"
+                                android:textSize="18sp"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Necessary documents"
+                                android:textSize="12sp"/>
+
+
+
+                    </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+                    <LinearLayout
+                android:id="@+id/attendanceLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border1"
+                android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_attendance"/>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Attendance"
+                                android:textSize="18sp"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Student's attendance for the academic year"
+                                android:textSize="12sp"/>
+
+
+
+                    </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+                    <LinearLayout
+                    android:id="@+id/quizlayout"
+                    android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/border1"
+                        android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_quiz"/>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Quiz Marks"
+                                        android:textSize="18sp"
+                                        android:textColor="@color/black"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Subject-wise marks of the tests conducted"
+                                        android:textSize="12sp"/>
+
+
+
+                            </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                    android:id="@+id/eventsLayout"
+                    android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/border1"
+                        android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_calendar"/>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Events"
+                                        android:textSize="18sp"
+                                        android:textColor="@color/black"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="holidays, exams, meetings, trips"
+                                        android:textSize="12sp"/>
+
+
+
+                            </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/paymentsLayout"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
-                        android:text="Resources"
-                        android:textSize="18dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorlogo2"
-                        android:gravity="center"/>
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/border1"
+                        android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_teaching"/>
 
 
-                </LinearLayout>
-        </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Payments"
+                                        android:textSize="18sp"
+                                        android:textColor="@color/black"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Academic finances"
+                                        android:textSize="12sp"/>
 
 
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-                <LinearLayout
-                    android:id="@+id/attendanceLayout"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="1"
-                    android:elevation="4dp"
-                    android:background="@drawable/border3"
-                    android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_attendance" />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="Attendance"
-                            android:textColor="@color/colorlogo3"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
+                            </LinearLayout>
 
 
-                </LinearLayout>
 
 
-                <LinearLayout
-                    android:id="@+id/quizlayout"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:elevation="4dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/border4"
-                    android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_quiz" />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="Quiz"
-                            android:textColor="@color/colorlogo4"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-
-
-                </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="1"
-                    android:elevation="4dp"
-                    android:id="@+id/eventsLayout"
-                    android:background="@drawable/border1"
-                    android:orientation="vertical" >
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_calendar"/>
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:text="Events"
-                            android:textSize="18dp"
-                            android:textStyle="bold"
-                            android:textColor="@color/colorlogo1"
-                            android:gravity="center"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/paymentsLayout"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:elevation="4dp"
-                    android:background="@drawable/border2"
-                    android:orientation="vertical" >
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/ic_teaching"/>
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:text="Payments"
-                            android:textSize="18dp"
-                            android:textStyle="bold"
-                            android:textColor="@color/colorlogo2"
-                            android:gravity="center"/>
-
-
-                </LinearLayout>
-        </LinearLayout>
+                    </LinearLayout>
 
 
 
 
 
-</LinearLayout>
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_marginTop="20dp"-->
+                        <!--android:orientation="vertical">-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="fill_parent"-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--android:layout_marginBottom="8dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:orientation="horizontal" >-->
+
+                            <!--<LinearLayout-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="fill_parent"-->
+                                <!--android:layout_marginLeft="8dp"-->
+                                <!--android:layout_marginRight="8dp"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:elevation="4dp"-->
+                                <!--android:id="@+id/announcementLayout"-->
+                                <!--android:background="@drawable/border1"-->
+                                <!--android:orientation="vertical" >-->
+
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_marginRight="8dp"-->
+                                        <!--android:layout_marginLeft="8dp"-->
+                                        <!--android:layout_marginTop="8dp"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:src="@drawable/ic_announcement"/>-->
+                                    <!--<TextView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:text="Announcement"-->
+                                        <!--android:textSize="18dp"-->
+                                        <!--android:textStyle="bold"-->
+                                        <!--android:textColor="@color/colorlogo1"-->
+                                        <!--android:gravity="center"/>-->
+
+                            <!--</LinearLayout>-->
+
+                            <!--<LinearLayout-->
+                                <!--android:id="@+id/resourcesLayout"-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="fill_parent"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:layout_marginLeft="8dp"-->
+                                <!--android:elevation="4dp"-->
+                                <!--android:layout_marginRight="8dp"-->
+                                <!--android:background="@drawable/border2"-->
+                                <!--android:orientation="vertical" >-->
+
+
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_marginRight="8dp"-->
+                                        <!--android:layout_marginLeft="8dp"-->
+                                        <!--android:layout_marginTop="8dp"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:src="@drawable/ic_notepad"/>-->
+                                    <!--<TextView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:text="Resources"-->
+                                        <!--android:textSize="18dp"-->
+                                        <!--android:textStyle="bold"-->
+                                        <!--android:textColor="@color/colorlogo2"-->
+                                        <!--android:gravity="center"/>-->
+
+
+                            <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="fill_parent"-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--android:layout_marginBottom="8dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:orientation="horizontal" >-->
+
+                            <!--<LinearLayout-->
+                                <!--android:id="@+id/attendanceLayout"-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="fill_parent"-->
+                                <!--android:layout_marginLeft="8dp"-->
+                                <!--android:layout_marginRight="8dp"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:elevation="4dp"-->
+                                <!--android:background="@drawable/border3"-->
+                                <!--android:orientation="vertical">-->
+
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_marginLeft="8dp"-->
+                                        <!--android:layout_marginRight="8dp"-->
+                                        <!--android:layout_marginTop="8dp"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:src="@drawable/ic_attendance" />-->
+
+                                    <!--<TextView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:text="Attendance"-->
+                                        <!--android:textColor="@color/colorlogo3"-->
+                                        <!--android:textSize="18dp"-->
+                                        <!--android:textStyle="bold" />-->
+
+
+                            <!--</LinearLayout>-->
+
+
+                            <!--<LinearLayout-->
+                                <!--android:id="@+id/quizlayout"-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="fill_parent"-->
+                                <!--android:layout_marginLeft="8dp"-->
+                                <!--android:layout_marginRight="8dp"-->
+                                <!--android:elevation="4dp"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:background="@drawable/border4"-->
+                                <!--android:orientation="vertical">-->
+
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_marginLeft="8dp"-->
+                                        <!--android:layout_marginRight="8dp"-->
+                                        <!--android:layout_marginTop="8dp"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:src="@drawable/ic_quiz" />-->
+
+                                    <!--<TextView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:gravity="center"-->
+                                        <!--android:text="Quiz"-->
+                                        <!--android:textColor="@color/colorlogo4"-->
+                                        <!--android:textSize="18dp"-->
+                                        <!--android:textStyle="bold" />-->
+
+
+                            <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="fill_parent"-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--android:layout_marginBottom="8dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:orientation="horizontal" >-->
+    ............
+                            <!--<LinearLayout-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="fill_parent"-->
+                                <!--android:layout_marginLeft="8dp"-->
+                                <!--android:layout_marginRight="8dp"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:elevation="4dp"-->
+                                <!--android:id="@+id/eventsLayout"-->
+                                <!--android:background="@drawable/border1"-->
+                                <!--android:orientation="vertical" >-->
+
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_marginRight="8dp"-->
+                                        <!--android:layout_marginLeft="8dp"-->
+                                        <!--android:layout_marginTop="8dp"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:src="@drawable/ic_calendar"/>-->
+                                    <!--<TextView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:text="Events"-->
+                                        <!--android:textSize="18dp"-->
+                                        <!--android:textStyle="bold"-->
+                                        <!--android:textColor="@color/colorlogo1"-->
+                                        <!--android:gravity="center"/>-->
+
+                            <!--</LinearLayout>-->
+
+                            <!--<LinearLayout-->
+                                <!--android:id="@+id/paymentsLayout"-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="fill_parent"-->
+                                <!--android:layout_weight="1"-->
+                                <!--android:layout_marginLeft="8dp"-->
+                                <!--android:layout_marginRight="8dp"-->
+                                <!--android:elevation="4dp"-->
+                                <!--android:background="@drawable/border2"-->
+                                <!--android:orientation="vertical" >-->
+
+                                    <!--<ImageView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_marginRight="8dp"-->
+                                        <!--android:layout_marginLeft="8dp"-->
+                                        <!--android:layout_marginTop="8dp"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:src="@drawable/ic_teaching"/>-->
+                                    <!--<TextView-->
+                                        <!--android:layout_width="fill_parent"-->
+                                        <!--android:layout_height="fill_parent"-->
+                                        <!--android:layout_weight="1"-->
+                                        <!--android:text="Payments"-->
+                                        <!--android:textSize="18dp"-->
+                                        <!--android:textStyle="bold"-->
+                                        <!--android:textColor="@color/colorlogo2"-->
+                                        <!--android:gravity="center"/>-->
+
+
+                            <!--</LinearLayout>-->
+                    <!--</LinearLayout>-->
+
+                    <!--</LinearLayout>-->
+            </LinearLayout>
+
+
+
+
+
+    </LinearLayout>

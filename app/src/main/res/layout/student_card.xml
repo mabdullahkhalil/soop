@@ -12,7 +12,6 @@
     <android.support.constraint.ConstraintLayout
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:background="@drawable/image_background"
         android:layout_height="wrap_content">
 
         <TextView
@@ -23,7 +22,7 @@
             android:layout_marginTop="130dp"
             android:text="Muhammad Abdullah"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,11 +31,10 @@
             android:id="@+id/studentClass"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:gravity="center"
             android:text="Class 1 Section A"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,8 +47,6 @@
             app:civ_border_color="@color/colorlogo3"
             android:layout_height="120dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/picture"
             app:layout_constraintBottom_toTopOf="@+id/studentName"
