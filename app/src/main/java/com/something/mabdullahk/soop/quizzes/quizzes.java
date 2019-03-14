@@ -99,6 +99,7 @@ public class quizzes extends AppCompatActivity {
                         for(int i=0; i < studentsData.length() ; i++) {
                             JSONObject quiz = studentsData.getJSONObject(i);
                             quizzesList.add(new quizClass(
+                                    studentId,
                                     quiz.getString("id"),
                                     quiz.getString("date"),
                                     quiz.getString("title"),

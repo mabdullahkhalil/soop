@@ -1,6 +1,7 @@
 package com.something.mabdullahk.soop.practiceQuiz;
 
 public class exercises {
+    String studentId;
 String name;
 String id;
 String quiz_competition_type;
@@ -9,7 +10,8 @@ String rounds;
 String number_of_quizzes;
 String Number_of_questions;
 
-    public exercises(String name, String id, String quiz_competition_type, String subjects, String rounds, String number_of_quizzes, String number_of_questions) {
+    public exercises(String studentId, String name, String id, String quiz_competition_type, String subjects, String rounds, String number_of_quizzes, String number_of_questions) {
+        this.studentId = studentId;
         this.name = name;
         this.id = id;
         this.quiz_competition_type = quiz_competition_type;
@@ -17,6 +19,14 @@ String Number_of_questions;
         this.rounds = rounds;
         this.number_of_quizzes = number_of_quizzes;
         Number_of_questions = number_of_questions;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
     public String getName() {

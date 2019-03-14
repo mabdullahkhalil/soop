@@ -14,7 +14,7 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/view_pager_1"
                 android:layout_width="match_parent"
-                android:layout_height="220dp" >
+                android:layout_height="200dp" >
             </android.support.v4.view.ViewPager>
 
 
@@ -316,7 +316,52 @@
                     </LinearLayout>
 
 
+                    <LinearLayout
+                        android:id="@+id/practiceQuizzesLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/border1"
+                        android:orientation="horizontal">
 
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_teaching"/>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:layout_marginTop="8dp"
+                                android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Practice Quizzes"
+                                        android:textSize="18sp"
+                                        android:textColor="@color/black"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Online quizzes for the students"
+                                        android:textSize="12sp"/>
+
+
+
+                            </LinearLayout>
+
+
+
+
+                    </LinearLayout>
 
 
 

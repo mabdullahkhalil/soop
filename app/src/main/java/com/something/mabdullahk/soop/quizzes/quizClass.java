@@ -5,6 +5,7 @@ package com.something.mabdullahk.soop.quizzes;
  */
 
 public class quizClass {
+    String studentId;
     String Id;
     String date;
     String title;
@@ -14,8 +15,8 @@ public class quizClass {
     String maximum_marks;
     String marks_obtained;
 
-
-    public quizClass(String id, String date, String title, String subject, String average, String total_marks, String maximum_marks, String marks_obtained) {
+    public quizClass(String studentId, String id, String date, String title, String subject, String average, String total_marks, String maximum_marks, String marks_obtained) {
+        this.studentId = studentId;
         Id = id;
         this.date = date;
         this.title = title;
@@ -26,6 +27,13 @@ public class quizClass {
         this.marks_obtained = marks_obtained;
     }
 
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
 
     public String getId() {
         return Id;
