@@ -9,4 +9,5 @@
     <color name="colorlogo4">#5092D1</color>
     <color name="colorgray">#ededed</color>
     <color name="eventCardsColor">#FAA60E</color>
+    <color name="colordarkgray">#474a56</color>
 </resources>
