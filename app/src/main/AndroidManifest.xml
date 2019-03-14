@@ -11,15 +11,18 @@
         android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".resources.resourcesActivity"
-            android:theme="@style/AppThemeBar1"></activity>
+        <activity android:name=".practiceQuiz.practiceQuiz"></activity>
+        <activity
+            android:name=".resources.resourcesActivity"
+            android:theme="@style/AppThemeBar1" />
         <activity
             android:name=".payments.paymentsActivity"
             android:theme="@style/AppThemeBar1" />
         <activity
             android:name=".events.eventsActivity"
             android:theme="@style/AppThemeBar1" />
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".SplashScreen"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,10 +31,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".IntroPages.sliderActivity" />
-        <activity android:name=".LoginPage"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".students.studentCards"
-            android:theme="@style/AppTheme"/>
+        <activity
+            android:name=".LoginPage"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".students.studentCards"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".quizzes.quizzes"
             android:theme="@style/AppThemeBar1" />

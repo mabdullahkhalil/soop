@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
@@ -31,6 +34,9 @@ public class paymentsActivity extends AppCompatActivity {
     List<paymentsClass> payments;
     SimpleArcDialog mDialog;
     String studentId;
+    LinearLayout paymentsMainView;
+    ScrollView paymentsScroll;
+    LinearLayout paymentsmsg;
 
 
     @Override
@@ -56,20 +62,14 @@ public class paymentsActivity extends AppCompatActivity {
 
         mDialog = new SimpleArcDialog(this);
         mDialog.setConfiguration(configuration);
+        paymentsMainView = (LinearLayout) findViewById(R.id.paymentsMainView);
+        paymentsmsg = (LinearLayout) findViewById(R.id.paymentsMessage);
+        paymentsScroll = (ScrollView) findViewById(R.id.paymentsScroll);
+
 
         recyclerView.setLayoutManager(paymentsGrid);
         payments = new ArrayList<>();
 
-
-//        payments.add(new paymentsClass("Feburary","-","0","3000","Not Paid"));
-//        payments.add(new paymentsClass("January","23rd January, 2019","1450","1550","Partially Paid"));
-//        payments.add(new paymentsClass("December","13th December, 2018","3000","0","Paid"));
-//        payments.add(new paymentsClass("November","9th November, 2018","1500","0","Paid"));
-//        payments.add(new paymentsClass("October","16th October, 2018","1600","0","Paid"));
-//        payments.add(new paymentsClass("September","1st September, 2018","2900","0","Paid"));
-//
-//        paymentsCardAdapter myAdapter = new paymentsCardAdapter(paymentsActivity.this, payments);
-//        recyclerView.setAdapter(myAdapter);
 
         getPayments();
 
@@ -107,18 +107,20 @@ public class paymentsActivity extends AppCompatActivity {
                         System.out.println(payments+ " is the quiz list.");
                         if (payments.size() > 0){
                             mDialog.dismiss();
-//                            quizzesMainView.removeView(quizzesmsg);
+                            paymentsMainView.removeView(paymentsmsg);
+                            paymentsMainView.setBackgroundColor(getResources().getColor(R.color.colorgray));
                             paymentsCardAdapter myAdapter = new paymentsCardAdapter(paymentsActivity.this,payments);
                             recyclerView.setAdapter(myAdapter);
                         } else {
                             mDialog.dismiss();
-//                            quizzesMainView.removeView(quizzesScroll);
-//                            quizzesmsg.setVisibility(View.VISIBLE);
+                            paymentsMainView.removeView(paymentsScroll);
+                            paymentsMainView.setBackgroundColor(getResources().getColor(R.color.white));
+                            paymentsmsg.setVisibility(View.VISIBLE);
                         }
 
                     }
                 }catch (JSONException e){
-                    System.out.println("JSON ERROR IN QUIZZES.ajva"+e);
+                    System.out.println("JSON ERROR IN payments.ajva"+e);
                 }
             }
 
@@ -126,8 +128,9 @@ public class paymentsActivity extends AppCompatActivity {
             public void onFaliure(String faliure) {
                 System.out.println("it failed i payments.java");
                 mDialog.dismiss();
-//                quizzesMainView.removeView(quizzesScroll);
-//                quizzesmsg.setVisibility(View.VISIBLE);
+                paymentsMainView.setBackgroundColor(getResources().getColor(R.color.white));
+                paymentsMainView.removeView(paymentsScroll);
+                paymentsmsg.setVisibility(View.VISIBLE);
             }
         },this);
 

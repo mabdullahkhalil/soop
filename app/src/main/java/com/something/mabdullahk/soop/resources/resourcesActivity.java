@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
@@ -31,6 +34,9 @@ public class resourcesActivity extends AppCompatActivity {
     List<resourcesClass> resources;
     SimpleArcDialog mDialog;
     String studentId;
+    LinearLayout resourcesMainView;
+    ScrollView resourcesScroll;
+    LinearLayout resourcesmsg;
 
 
     @Override
@@ -57,6 +63,9 @@ public class resourcesActivity extends AppCompatActivity {
 
         mDialog = new SimpleArcDialog(this);
         mDialog.setConfiguration(configuration);
+        resourcesMainView = (LinearLayout) findViewById(R.id.resourcesMainView);
+        resourcesmsg = (LinearLayout) resourcesMainView.findViewById(R.id.resourcesMessage);
+        resourcesScroll = (ScrollView) findViewById(R.id.resourcesScroll);
 
         recyclerView.setLayoutManager(resourcesGrid);
         resources = new ArrayList<>();
@@ -97,17 +106,20 @@ public class resourcesActivity extends AppCompatActivity {
                         System.out.println(resources+ " is the quiz list.");
                         if (resources.size() > 0){
                             mDialog.dismiss();
+                            resourcesMainView.removeView(resourcesmsg);
+                            resourcesMainView.setBackgroundColor(getResources().getColor(R.color.colorgray));
                             resourcesCardAdapter myAdapter = new resourcesCardAdapter(resourcesActivity.this,resources);
                             recyclerView.setAdapter(myAdapter);
                         } else {
                             mDialog.dismiss();
-//                            quizzesMainView.removeView(quizzesScroll);
-//                            quizzesmsg.setVisibility(View.VISIBLE);
+                            resourcesMainView.removeView(resourcesScroll);
+                            resourcesMainView.setBackgroundColor(getResources().getColor(R.color.white));
+                            resourcesmsg.setVisibility(View.VISIBLE);
                         }
 
                     }
                 }catch (JSONException e){
-                    System.out.println("JSON ERROR IN QUIZZES.ajva"+e);
+                    System.out.println("JSON ERROR IN resources.ajva"+e);
                 }
             }
 
@@ -115,8 +127,9 @@ public class resourcesActivity extends AppCompatActivity {
             public void onFaliure(String faliure) {
                 System.out.println("it failed i resources.java");
                 mDialog.dismiss();
-//                quizzesMainView.removeView(quizzesScroll);
-//                quizzesmsg.setVisibility(View.VISIBLE);
+                resourcesMainView.setBackgroundColor(getResources().getColor(R.color.white));
+                resourcesMainView.removeView(resourcesScroll);
+                resourcesmsg.setVisibility(View.VISIBLE);
             }
         },this);
 

@@ -6,6 +6,7 @@ public class attendanceDates {
     List<String> date;
     List<String> attended;
 
+
     public attendanceDates(List<String> date, List<String> attended) {
         this.date = date;
         this.attended = attended;

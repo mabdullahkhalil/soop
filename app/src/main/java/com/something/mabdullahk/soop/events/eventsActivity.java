@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
@@ -27,7 +30,9 @@ public class eventsActivity extends AppCompatActivity {
     List<eventsClass> events;
     SimpleArcDialog mDialog;
     String studentId;
-
+    LinearLayout eventsMainView;
+    ScrollView eventsScroll;
+    LinearLayout eventsmsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,34 +57,19 @@ public class eventsActivity extends AppCompatActivity {
 
         mDialog = new SimpleArcDialog(this);
         mDialog.setConfiguration(configuration);
+        eventsMainView = (LinearLayout) findViewById(R.id.eventsMainView);
+        eventsmsg = (LinearLayout) findViewById(R.id.eventsMessage);
+        eventsScroll = (ScrollView) findViewById(R.id.eventsScroll);
 
         recyclerView.setLayoutManager(eventsGrid);
         events = new ArrayList<>();
 
 
-//        events.add(new eventsClass("Trip to SOS", "13 Jan, 2019", "2 days to go", "social_activity", "A trip is planned to SOS village for social working skills of the children."));
-//        events.add(new eventsClass("October meeting", "9 Jan, 2019", "Passed", "parent_teacher_meeting", "It is mandatory for all the parents to attend the ptm as December tests performance of their chidlren would be discussed."));
-//        events.add(new eventsClass("Midterm Exam 2019", "10 Jan, 2019", "9 days to go", "exams", "Let the games begin of the october exams."));
-//        events.add(new eventsClass("Pakistan Revolution Holiday", "23 March, 2019", "2 months to go", "holiday", "CHildren be patriotic and understand the meaning behind this holiday. it plays an important role in the history of pakistan by quaid-e-Azam Muhammad Ali Jinnah."));
-//        case "holiday":
-//        return R.color.colorlogo1;
-//        case "exams":
-//        return R.color.colorlogo2;
-//        case "function":
-//        return R.color.colorlogo1;
-//        case "social_activity":
-//        return R.color.colorlogo3;
-//        case "parent_teacher_meeting":
-
-        eventsCardAdapter myAdapter = new eventsCardAdapter(eventsActivity.this, events);
-        recyclerView.setAdapter(myAdapter);
-
-
-        getAnnouncemnets();
+        getEvents();
 
     }
 
-    private void getAnnouncemnets(){
+    private void getEvents(){
 
         mDialog.show();
         Map<String, String> params = new HashMap<>();
@@ -111,13 +101,15 @@ public class eventsActivity extends AppCompatActivity {
                         System.out.println(events+ " is the quiz list.");
                         if (events.size() > 0){
                             mDialog.dismiss();
-//                            quizzesMainView.removeView(quizzesmsg);
+                            eventsMainView.removeView(eventsmsg);
+                            eventsMainView.setBackgroundColor(getResources().getColor(R.color.colorgray));
                             eventsCardAdapter myAdapter = new eventsCardAdapter(eventsActivity.this,events);
                             recyclerView.setAdapter(myAdapter);
                         } else {
                             mDialog.dismiss();
-//                            quizzesMainView.removeView(quizzesScroll);
-//                            quizzesmsg.setVisibility(View.VISIBLE);
+                            eventsMainView.removeView(eventsScroll);
+                            eventsMainView.setBackgroundColor(getResources().getColor(R.color.white));
+                            eventsmsg.setVisibility(View.VISIBLE);
                         }
 
                     }
@@ -130,8 +122,9 @@ public class eventsActivity extends AppCompatActivity {
             public void onFaliure(String faliure) {
                 System.out.println("it failed i events.java");
                 mDialog.dismiss();
-//                quizzesMainView.removeView(quizzesScroll);
-//                quizzesmsg.setVisibility(View.VISIBLE);
+                eventsMainView.setBackgroundColor(getResources().getColor(R.color.white));
+                eventsMainView.removeView(eventsScroll);
+                eventsmsg.setVisibility(View.VISIBLE);
             }
         },this);
 

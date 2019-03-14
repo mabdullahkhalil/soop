@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 
 import com.imanoweb.calendarview.CalendarListener;
@@ -42,6 +43,11 @@ public class attendanceActivity extends AppCompatActivity {
     attendanceDates attendanceDatesList;
     String studentId;
     Calendar currentCalendar;
+    TextView attendancePresent;
+    TextView attendanceAbsent;
+    TextView attendanceLeave;
+
+
 
 
     @Override
@@ -63,6 +69,10 @@ public class attendanceActivity extends AppCompatActivity {
         mDialog = new SimpleArcDialog(this);
         mDialog.setConfiguration(configuration);
         studentId = (String) getIntent().getStringExtra("studentID");
+        attendancePresent = (TextView) findViewById(R.id.attendancePresent);
+        attendanceAbsent = (TextView) findViewById(R.id.attendanceAbsent);
+        attendanceLeave = (TextView) findViewById(R.id.attendanceLeave);
+
 //        attendanceDatesList = new ArrayList<>();
 
 
@@ -228,6 +238,9 @@ public class attendanceActivity extends AppCompatActivity {
                     Boolean success = students.getBoolean("success");
 
                     if (success){
+                        attendancePresent.setText(students.getJSONObject("data").getString("presents"));
+                        attendanceAbsent.setText(students.getJSONObject("data").getString("absents"));
+                        attendanceLeave.setText(students.getJSONObject("data").getString("leaves"));
                         JSONArray studentsData = students.getJSONObject("data").getJSONArray("attendance");
                         List<String> atDates = new ArrayList<>();
                         List<String> atAttended = new ArrayList<>();

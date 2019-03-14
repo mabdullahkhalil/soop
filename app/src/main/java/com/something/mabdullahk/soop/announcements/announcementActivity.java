@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
@@ -28,7 +31,9 @@ public class announcementActivity extends AppCompatActivity {
     List<announcement> announcements;
     SimpleArcDialog mDialog ;
     String studentId;
-
+    LinearLayout announcementsMainView;
+    ScrollView announcementsScroll;
+    LinearLayout announcementsmsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,20 +58,12 @@ public class announcementActivity extends AppCompatActivity {
 
         mDialog = new SimpleArcDialog(this);
         mDialog.setConfiguration(configuration);
+        announcementsMainView = (LinearLayout) findViewById(R.id.announcementsMainView);
+        announcementsmsg = (LinearLayout) findViewById(R.id.announcementsMessage);
+        announcementsScroll = (ScrollView) findViewById(R.id.announcementsScroll);
 
         recyclerView.setLayoutManager(announcementsGrid);
         announcements = new ArrayList<>();
-
-//
-//        announcements.add(new announcement("Abdullah Khalil","Physics Quiz", "11 January,2019 - 11:59pm", "The mean marks of the quiz were 15. The class performed well overall."));
-//        announcements.add(new announcement("Hamza Altaf","Urdu Homework", "15 Feburary,2019 - 10:07am", "The homework is due tomorrow morning."));
-//        announcements.add(new announcement("Qasim Anjum","Artifical Intelligence", "19 Feburary,2019 - 10:07am", "This is the simplest illustration of the basic idea of backprop algorithm. It does not involve matrix nor vectors. It only involves derivatives against scalars. Very good for starters."));
-//        announcements.add(new announcement("Abdullah Khalil","Physics Quiz", "11 January,2019 - 11:59pm", "The mean marks of the quiz were 15. The class performed well overall."));
-//        announcements.add(new announcement("Hamza Altaf","Urdu Homework", "15 Feburary,2019 - 10:07am", "The homework is due tomorrow morning."));
-//        announcements.add(new announcement("Qasim Anjum","Artifical Intelligence", "19 Feburary,2019 - 10:07am", "This is the simplest illustration of the basic idea of backprop algorithm. It does not involve matrix nor vectors. It only involves derivatives against scalars. Very good for starters."));
-//        announcementAdapter myAdapter = new announcementAdapter(announcementActivity.this,announcements);
-//        recyclerView.setAdapter(myAdapter);
-
 
         getAnnouncemnets();
 
@@ -104,13 +101,15 @@ public class announcementActivity extends AppCompatActivity {
                         System.out.println(announcements+ " is the quiz list.");
                         if (announcements.size() > 0){
                             mDialog.dismiss();
-//                            quizzesMainView.removeView(quizzesmsg);
+                            announcementsMainView.removeView(announcementsmsg);
+                            announcementsMainView.setBackgroundColor(getResources().getColor(R.color.colorgray));
                             announcementAdapter myAdapter = new announcementAdapter(announcementActivity.this,announcements);
                             recyclerView.setAdapter(myAdapter);
                         } else {
                             mDialog.dismiss();
-//                            quizzesMainView.removeView(quizzesScroll);
-//                            quizzesmsg.setVisibility(View.VISIBLE);
+                            announcementsMainView.removeView(announcementsScroll);
+                            announcementsMainView.setBackgroundColor(getResources().getColor(R.color.white));
+                            announcementsmsg.setVisibility(View.VISIBLE);
                         }
 
                     }
@@ -123,8 +122,9 @@ public class announcementActivity extends AppCompatActivity {
             public void onFaliure(String faliure) {
                 System.out.println("it failed i announcements.java");
                 mDialog.dismiss();
-//                quizzesMainView.removeView(quizzesScroll);
-//                quizzesmsg.setVisibility(View.VISIBLE);
+                announcementsMainView.setBackgroundColor(getResources().getColor(R.color.white));
+                announcementsMainView.removeView(announcementsScroll);
+                announcementsmsg.setVisibility(View.VISIBLE);
             }
         },this);
 

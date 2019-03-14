@@ -17,7 +17,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:background="@drawable/border4"
+        android:background="@drawable/border1"
         android:gravity="center">
 
 
@@ -29,6 +29,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/attendanceLeave"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="8"
@@ -42,9 +43,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Leave"
-                android:textStyle="bold"
                 android:textColor="@android:color/holo_orange_light"
-                android:textSize="20sp"/>
+                android:textSize="16sp"/>
 
 
 
@@ -52,7 +52,7 @@
 
         <View
             android:layout_width="2dp"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:alpha=".5"
             android:background="@color/colorlogo3" />
 
@@ -63,6 +63,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/attendancePresent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="18"
@@ -78,8 +79,7 @@
                 android:gravity="center"
                 android:text="Present"
                 android:textColor="@android:color/holo_green_light"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
+                android:textSize="16sp"/>
 
 
 
@@ -87,7 +87,7 @@
 
         <View
             android:layout_width="2dp"
-            android:layout_height="100dp"
+            android:layout_height="match_parent"
             android:alpha=".5"
             android:background="@color/colorlogo3" />
         <LinearLayout
@@ -97,6 +97,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/attendanceAbsent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="8"
@@ -109,9 +110,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Absent"
-                android:textStyle="bold"
                 android:textColor="@android:color/holo_red_light"
-                android:textSize="20sp"/>
+                android:textSize="16sp"/>
 
 
 
