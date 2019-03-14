@@ -66,6 +66,7 @@ public class practiceQuiz extends AppCompatActivity {
         recyclerView.setLayoutManager(practiceQuizGrid);
 
 
+
         getPracticeQuizzes();
     }
 

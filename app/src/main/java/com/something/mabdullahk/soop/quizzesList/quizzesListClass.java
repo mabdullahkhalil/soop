@@ -2,6 +2,7 @@ package com.something.mabdullahk.soop.quizzesList;
 
 public class quizzesListClass {
 
+    String studentId;
     String id;
     String name;
     String subjects;
@@ -11,7 +12,8 @@ public class quizzesListClass {
     String difficulty_level;
     String round;
 
-    public quizzesListClass(String id, String name, String subjects, String total_questions, String passing_marks, String mark_per_question, String difficulty_level, String round) {
+    public quizzesListClass(String studentId, String id, String name, String subjects, String total_questions, String passing_marks, String mark_per_question, String difficulty_level, String round) {
+        this.studentId = studentId;
         this.id = id;
         this.name = name;
         this.subjects = subjects;
@@ -20,6 +22,14 @@ public class quizzesListClass {
         this.mark_per_question = mark_per_question;
         this.difficulty_level = difficulty_level;
         this.round = round;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
     }
 
     public String getId() {

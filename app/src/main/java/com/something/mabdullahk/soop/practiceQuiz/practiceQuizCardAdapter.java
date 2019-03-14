@@ -49,6 +49,7 @@ public class practiceQuizCardAdapter extends RecyclerView.Adapter<RecyclerView.V
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, quizzesListActivity.class);
                 intent.putExtra("studentID",practiceQuizList.get(position).getStudentId());
+                intent.putExtra("practiceID",practiceQuizList.get(position).getId());
                 mContext.startActivity(intent);
             }
         });

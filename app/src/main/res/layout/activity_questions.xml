@@ -18,7 +18,7 @@
         android:background="@drawable/border1"
         android:layout_marginRight="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="12dp">
+        android:layout_marginTop="8dp">
 
 
         <TextView
@@ -26,10 +26,11 @@
             android:layout_height="wrap_content"
             android:text="Question"
             android:textStyle="bold"
+            android:fontFamily="monospace"
             android:gravity="center"
             android:textSize="18sp"
             android:textColor="@color/colordarkgray"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="4dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -46,21 +47,19 @@
     </LinearLayout>
 
 
-    <ListView
-        android:dividerHeight="4dp"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_marginTop="16dp"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_below="@+id/questionLayout"
         android:layout_above="@+id/questionsDown"
         android:layout_marginBottom="16dp"
-        android:listSelector="@color/colorlogo4"
-        android:divider="@color/colorgray"
+        android:orientation="vertical"
         android:id="@+id/answersLayout">
 
 
 
-    </ListView>
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/questionsDown"
