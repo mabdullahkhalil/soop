@@ -3,11 +3,13 @@ package com.something.mabdullahk.soop.practiceQuiz;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
 import android.support.design.chip.Chip;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -53,6 +55,7 @@ public class practiceQuizCardAdapter extends RecyclerView.Adapter<RecyclerView.V
                 mContext.startActivity(intent);
             }
         });
+        ((practiceQuizCardViewHolder)holder).image.setImageResource(practiceQuizList.get(position).imageSrc());
 }
 
 
@@ -70,6 +73,7 @@ class practiceQuizCardViewHolder extends RecyclerView.ViewHolder {
     TextView title;
     Chip chip;
     LinearLayout card;
+    ImageView image;
 
 
     public practiceQuizCardViewHolder(View itemView) {
@@ -78,6 +82,7 @@ class practiceQuizCardViewHolder extends RecyclerView.ViewHolder {
         title = (TextView) itemView.findViewById(R.id.practiceQuizCardName);
         chip = (Chip) itemView.findViewById(R.id.practiceQuizCardChip);
         card = (LinearLayout) itemView.findViewById(R.id.cardPracticeQuiz);
+        image = (ImageView) itemView.findViewById(R.id.practiceQuizCardImage);
 
     }
 

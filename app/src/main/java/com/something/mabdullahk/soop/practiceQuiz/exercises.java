@@ -1,5 +1,7 @@
 package com.something.mabdullahk.soop.practiceQuiz;
 
+import com.something.mabdullahk.soop.R;
+
 public class exercises {
     String studentId;
 String name;
@@ -84,5 +86,28 @@ String Number_of_questions;
     public void setNumber_of_questions(String number_of_questions) {
         Number_of_questions = number_of_questions;
     }
+
+    public int imageSrc(){
+        switch(this.subjects.toLowerCase()){
+            case "islamiat":
+                return R.drawable.islamiat;
+            case "english":
+                return R.drawable.english;
+            case "chemistry":
+                return R.drawable.chemistry;
+            case "biology":
+                return R.drawable.biology;
+            case "maths":
+                return R.drawable.maths;
+            case "paskitan":
+                return R.drawable.pakistan;
+            case "physics":
+                return R.drawable.physics;
+
+                default:
+                    return R.drawable.subject;
+        }
+    }
+
 }
 

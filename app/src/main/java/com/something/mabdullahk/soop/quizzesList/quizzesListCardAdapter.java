@@ -1,6 +1,7 @@
 package com.something.mabdullahk.soop.quizzesList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.design.chip.Chip;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import com.something.mabdullahk.soop.HTTPrequest;
 import com.something.mabdullahk.soop.R;
+import com.something.mabdullahk.soop.questions.questionsActivity;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -74,6 +76,10 @@ public class quizzesListCardAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                     @Override
                     public void onSuccess(String result) {
                         System.out.println(result);
+                        Intent intent = new Intent(mContext, questionsActivity.class);
+                        intent.putExtra("studentID",quizzesList.get(position).getStudentId());
+                        intent.putExtra("practiceID",quizzesList.get(position).getId());
+                        mContext.startActivity(intent);
                     }
 
                     @Override
