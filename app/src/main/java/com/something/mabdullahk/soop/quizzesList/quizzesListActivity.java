@@ -64,18 +64,6 @@ public class quizzesListActivity extends AppCompatActivity {
         quizzesList = new ArrayList<>();
 
 
-//        quizzesList.add(new quizzesListClass("quiz","quiz","quiz","quiz","quiz","quiz","quiz","quiz"));
-//        quizzesList.add(new quizzesListClass("quiz","quiz","quiz","quiz","quiz","quiz","quiz","quiz"));
-//        quizzesList.add(new quizzesListClass("quiz","quiz","quiz","quiz","quiz","quiz","quiz","quiz"));
-//        quizzesList.add(new quizzesListClass("quiz","quiz","quiz","quiz","quiz","quiz","quiz","quiz"));
-//        quizzesList.add(new quizzesListClass("quiz","quiz","quiz","quiz","quiz","quiz","quiz","quiz"));
-//        quizzesList.add(new quizzesListClass("quiz","quiz","quiz","quiz","quiz","quiz","quiz","quiz"));
-
-
-//        quizzesListCardAdapter myAdapter = new quizzesListCardAdapter(quizzesListActivity.this,quizzesList);
-//        recyclerView.setAdapter(myAdapter);
-
-
         getQuizzesList();
     }
 
@@ -86,7 +74,7 @@ public class quizzesListActivity extends AppCompatActivity {
         Map<String, String> headers = new HashMap<>();
 
 
-        HTTPrequest.placeRequest("https://soop-staging.herokuapp.com/api/v1/tests/quizzes/"+practiceId+"/quizzes", "Get", params, headers, new HTTPrequest.VolleyCallback() {
+        HTTPrequest.placeRequest("https://soop-staging.herokuapp.com/api/v1/tests/quizzes/"+practiceId+"/quizzes?sid="+studentId, "Get", params, headers, new HTTPrequest.VolleyCallback() {
             @Override
             public void onSuccess(String result) {
 

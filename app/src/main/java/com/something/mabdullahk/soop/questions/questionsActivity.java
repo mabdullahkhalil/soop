@@ -1,5 +1,6 @@
 package com.something.mabdullahk.soop.questions;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.design.chip.Chip;
 import android.support.v4.content.ContextCompat;
@@ -10,15 +11,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.leo.simplearcloader.ArcConfiguration;
 import com.leo.simplearcloader.SimpleArcDialog;
 import com.leo.simplearcloader.SimpleArcLoader;
 import com.something.mabdullahk.soop.HTTPrequest;
 import com.something.mabdullahk.soop.R;
+import com.something.mabdullahk.soop.quizResults.quizResults;
 import com.something.mabdullahk.soop.quizzesList.quizzesListActivity;
 import com.something.mabdullahk.soop.quizzesList.quizzesListCardAdapter;
 import com.something.mabdullahk.soop.quizzesList.quizzesListClass;
+import com.something.mabdullahk.soop.students.studentCards;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,6 +53,8 @@ public class questionsActivity extends AppCompatActivity {
     questionsClass questionDetails;
     String studentId;
     String practiceId;
+    Boolean isAnswerSelected;
+
 
 
     @Override
@@ -66,6 +72,7 @@ public class questionsActivity extends AppCompatActivity {
         studentId = (String) getIntent().getStringExtra("studentID");
         practiceId = (String) getIntent().getStringExtra("practiceID");
         currentQuestionNumber = 1;
+        isAnswerSelected = false;
 
         ArcConfiguration configuration = new ArcConfiguration(this);
         configuration.setLoaderStyle(SimpleArcLoader.STYLE.SIMPLE_ARC);
@@ -86,15 +93,61 @@ public class questionsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (currentQuestionNumber == totalNumberofquestions-1){
+                if (!isAnswerSelected){
+                    Toast.makeText(questionsActivity.this,"Please select an Answer to continue",Toast.LENGTH_LONG).show();
+                }else if (currentQuestionNumber == totalNumberofquestions-1){
                     nextquestion.setText("SUBMIT quiz");
                     nextquestion.setBackgroundDrawable(ContextCompat.getDrawable(questionsActivity.this, R.drawable.border5));
                     answerss.removeAllViewsInLayout();
+                    question.setText("");
                     getNextQuestion();
 
                 }else if(currentQuestionNumber < totalNumberofquestions) {
                     answerss.removeAllViewsInLayout();
+                    question.setText("");
                     getNextQuestion();
+
+                }else if(currentQuestionNumber == totalNumberofquestions){
+                    Map<String, String> paramsAnswer = new HashMap<>();
+                    Map<String, String> headersAnswer = new HashMap<>();
+                    paramsAnswer.put("sid",studentId);
+                    paramsAnswer.put("qid",questionDetails.getId());
+                    paramsAnswer.put("aid",Integer.toString(selectedAnswer.getId()));
+
+
+                    HTTPrequest.placeRequest("https://soop-staging.herokuapp.com/api/v1/tests/quizzes/" + practiceId + "/answer", "Post", paramsAnswer, headersAnswer, new HTTPrequest.VolleyCallback() {
+                        @Override
+                        public void onSuccess(String result) {
+                            try {
+                                JSONObject questionObject = new JSONObject(result);
+                                Boolean success = questionObject.getBoolean("success");
+                                System.out.println(result + " is the resultlttttt.......");
+                                if (success){
+                                    JSONObject answerData = questionObject.getJSONObject("data");
+
+                                    String correctNum  = Integer.toString(answerData.getInt("correct_num"));
+                                    String inCorrectNum  = Integer.toString(answerData.getInt("incorrect_num"));
+
+                                    Intent intent = new Intent(questionsActivity.this, quizResults.class);
+                                    intent.putExtra("correctAns",correctNum);
+                                    intent.putExtra("incorrectAns",inCorrectNum);
+                                    startActivity(intent);
+
+
+                                }
+
+                            } catch (JSONException e){
+                                System.out.println("json exception"+e);
+                            }
+                        }
+
+                        @Override
+                        public void onFaliure(String faliure) {
+
+                        }
+                    }, questionsActivity.this);
+
+
                 }
 
             }
@@ -181,7 +234,10 @@ public class questionsActivity extends AppCompatActivity {
             linearLayout.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    selectedAnswer.setBackgroundDrawable(ContextCompat.getDrawable(questionsActivity.this, R.drawable.border1));
+                    if (isAnswerSelected) {
+                        selectedAnswer.setBackgroundDrawable(ContextCompat.getDrawable(questionsActivity.this, R.drawable.border1));
+                    }
+                    isAnswerSelected=true;
                     linearLayout.setBackgroundDrawable(ContextCompat.getDrawable(questionsActivity.this, R.drawable.border_answers));
                     selectedAnswer = linearLayout;
 
@@ -197,7 +253,6 @@ public class questionsActivity extends AppCompatActivity {
             textView.setTextSize(16);
             textView.setLayoutParams(params);
             linearLayout.addView(textView);
-            selectedAnswer = linearLayout;
 
             answerss.addView(linearLayout);
 
@@ -212,57 +267,94 @@ public class questionsActivity extends AppCompatActivity {
 
 
     private void getNextQuestion(){
+        isAnswerSelected=false;
         System.out.println(selectedAnswer.getId());
         mDialog.show();
-        Map<String, String> params = new HashMap<>();
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> paramsAnswer = new HashMap<>();
+        Map<String, String> headersAnswer = new HashMap<>();
+        paramsAnswer.put("sid",studentId);
+        paramsAnswer.put("qid",questionDetails.getId());
+        paramsAnswer.put("aid",Integer.toString(selectedAnswer.getId()));
 
-        System.out.println("url ======> https://soop-staging.herokuapp.com/api/v1/tests/quizzes/"+practiceId+"/next_question?qid="+questionDetails.getId());
-        HTTPrequest.placeRequest("https://soop-staging.herokuapp.com/api/v1/tests/quizzes/"+practiceId+"/next_question?qid="+questionDetails.getId(), "Get", params, headers, new HTTPrequest.VolleyCallback() {
+        System.out.println("params =======>"+paramsAnswer);
+
+
+        HTTPrequest.placeRequest("https://soop-staging.herokuapp.com/api/v1/tests/quizzes/" + practiceId + "/answer", "Post", paramsAnswer, headersAnswer, new HTTPrequest.VolleyCallback() {
             @Override
             public void onSuccess(String result) {
                 try {
                     JSONObject questionObject = new JSONObject(result);
                     Boolean success = questionObject.getBoolean("success");
-
                     System.out.println(result+" is the resultlttttt.......");
+
                     if (success){
-                        JSONObject exercisesData = questionObject.getJSONObject("data").getJSONObject("questions");
-                        List<answersClass> answers = new ArrayList<>();
-                        JSONArray answersData = exercisesData.getJSONArray("options");
 
-                        for (int j=0;j< answersData.length();j++){
-                            JSONObject anno1 = answersData.getJSONObject(j);
-                            answers.add(new answersClass(Integer.toString(anno1.getInt("id")), anno1.getString("text")));
-                        }
+                        Map<String, String> params = new HashMap<>();
+                        Map<String, String> headers = new HashMap<>();
+                        System.out.println("url ======> https://soop-staging.herokuapp.com/api/v1/tests/quizzes/"+practiceId+"/next_question?qid="+questionDetails.getId());
+                        HTTPrequest.placeRequest("https://soop-staging.herokuapp.com/api/v1/tests/quizzes/"+practiceId+"/next_question?qid="+questionDetails.getId(), "Get", params, headers, new HTTPrequest.VolleyCallback() {
+                            @Override
+                            public void onSuccess(String result) {
+                                isAnswerSelected=false;
+                                try {
+                                    JSONObject questionObject = new JSONObject(result);
+                                    Boolean success = questionObject.getBoolean("success");
 
-                        currentQuestionNumber++;
-                        fetchedQuestion = new questionsClass(
-                                Integer.toString(exercisesData.getInt("id")),
-                                exercisesData.getString("statement"),
-                                exercisesData.getString("subject"),
-                                answers,
-                                Integer.toString(questionObject.getJSONObject("data").getInt("quiz_id"))
-                        );
+                                    System.out.println(result+" is the resultlttttt.......");
+                                    if (success){
+                                        JSONObject exercisesData = questionObject.getJSONObject("data").getJSONObject("questions");
+                                        List<answersClass> answers = new ArrayList<>();
+                                        JSONArray answersData = exercisesData.getJSONArray("options");
 
-                        questionDetails = fetchedQuestion;
-                        displayData(fetchedQuestion);
+                                        for (int j=0;j< answersData.length();j++){
+                                            JSONObject anno1 = answersData.getJSONObject(j);
+                                            answers.add(new answersClass(Integer.toString(anno1.getInt("id")), anno1.getString("text")));
+                                        }
+
+                                        currentQuestionNumber++;
+                                        fetchedQuestion = new questionsClass(
+                                                Integer.toString(exercisesData.getInt("id")),
+                                                exercisesData.getString("statement"),
+                                                exercisesData.getString("subject"),
+                                                answers,
+                                                Integer.toString(questionObject.getJSONObject("data").getInt("quiz_id"))
+                                        );
+
+                                        questionDetails = fetchedQuestion;
+                                        displayData(fetchedQuestion);
+                                    }
+                                }catch (JSONException e){
+                                    mDialog.dismiss();
+                                    System.out.println("JSON ERROR IN payments.ajva"+e);
+                                }
+                            }
+
+                            @Override
+                            public void onFaliure(String faliure) {
+                                System.out.println("it failed i payments.java");
+                                mDialog.dismiss();
+
+                            }
+                        },questionsActivity.this);
+
                     }
-                }catch (JSONException e){
-                    mDialog.dismiss();
-                    System.out.println("JSON ERROR IN payments.ajva"+e);
+                } catch (JSONException e){
+                    System.out.println("JSON ERROR"+e);
                 }
             }
 
             @Override
             public void onFaliure(String faliure) {
-                System.out.println("it failed i payments.java");
-                mDialog.dismiss();
 
             }
-        },this);
-
-
+        }, this);
     }
 
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+//
+//        startActivity(new Intent(this, studentCards.class));
+    }
 }

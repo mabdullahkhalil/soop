@@ -1,20 +1,23 @@
-package com.something.mabdullahk.soop;
+package com.something.mabdullahk.soop.quizResults;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
-import com.leo.simplearcloader.ArcConfiguration;
-import com.leo.simplearcloader.SimpleArcDialog;
-import com.leo.simplearcloader.SimpleArcLoader;
+import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import com.something.mabdullahk.soop.HTTPrequest;
+import com.something.mabdullahk.soop.LoginPage;
+import com.something.mabdullahk.soop.R;
 import com.something.mabdullahk.soop.students.student;
 import com.something.mabdullahk.soop.students.studentCards;
 
@@ -28,11 +31,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LoginPage extends AppCompatActivity {
+public class quizResults extends AppCompatActivity {
 
-    EditText rollNumber;
-    Button login;
-    SimpleArcDialog mDialog ;
+    PieChart pieChart;
+    int correctAns;
+    int incorrectAns;
+    Button done;
     List<student> childrenList;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
@@ -41,62 +45,65 @@ public class LoginPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
+        setContentView(R.layout.activity_quiz_results);
 
-        rollNumber = (EditText)findViewById(R.id.rollNumber);
-        login      = (Button)findViewById(R.id.loginButton);
-        childrenList= new ArrayList<>();
-        preferences = this.getSharedPreferences("soop", MODE_PRIVATE);
+        done = findViewById(R.id.resultsButton);
+        preferences = getSharedPreferences("soop", MODE_PRIVATE);
         editor = preferences.edit();
 
-
-        ArcConfiguration configuration = new ArcConfiguration(this);
-        configuration.setLoaderStyle(SimpleArcLoader.STYLE.SIMPLE_ARC);
-        configuration.setText("Please wait..");
-        int[] colors = new int[]{R.color.colorlogo1,R.color.colorlogo2,R.color.colorlogo3,R.color.colorlogo4};
-        configuration.setColors(colors);
-        configuration.setAnimationSpeed(SimpleArcLoader.SPEED_MEDIUM);
+        correctAns = Integer.valueOf(getIntent().getStringExtra("correctAns"));
+        incorrectAns = Integer.valueOf(getIntent().getStringExtra("incorrectAns"));
+        childrenList = new ArrayList<>();
 
 
-        mDialog = new SimpleArcDialog(this);
-        mDialog.setConfiguration(configuration);
+        pieChart = findViewById(R.id.pieChart);
+
+//        pieChart.setUsePercentValues(true);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setExtraOffsets(5,10,5,5);
+
+        pieChart.setDragDecelerationFrictionCoef(0.95f);
+
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setHoleColor(Color.WHITE);
+
+        ArrayList<PieEntry> values = new ArrayList<>();
 
 
-        login.setOnClickListener(new View.OnClickListener() {
+        values.add(new PieEntry(correctAns,"Correct"));
+        values.add(new PieEntry(incorrectAns,"InCorrect"));
+
+
+        pieChart.animateY(1000, Easing.EaseInOutCubic);
+
+        PieDataSet pieDataSet = new PieDataSet(values,"Marks");
+        pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        pieDataSet.setValueTextSize(16f);
+
+        PieData data = new PieData((pieDataSet));
+        data.setValueTextSize(12f);
+
+        pieChart.setData(data);
+
+        done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginClicked();
+                onBackPressed();
             }
         });
 
 
-        rollNumber.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
-                    loginClicked();
-                }
-                return false;
-            }
-        });
     }
 
-    private void loginClicked(){
-        if (!rollNumber.getText().toString().isEmpty()){
-
-
-            System.out.println(rollNumber.getText().toString());
-            mDialog.show();
-            sendrequest(rollNumber.getText().toString());
-        } else {
-            rollNumber.setError("Enter roll number to continue.");
-            System.out.println("enter roll numebr");
-        }
-    }
-
-
-    private void sendrequest(final String rollnumber){
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
         Map<String, String> params = new HashMap<>();
         Map<String, String> headers = new HashMap<>();
+        String rollnumber = preferences.getString("rollnumber", null);
+
+
+        System.out.println("rollnumber ======> "+rollnumber);
 
 //        params.put("id","46285948");
 
@@ -109,13 +116,13 @@ public class LoginPage extends AppCompatActivity {
                     Boolean success = students.getBoolean("success");
 
 
+//                    System.out.println(studentsData);
+
                     if (success){
                         JSONObject studentsData = students.getJSONObject("data");
 
                         JSONArray childrenData= studentsData.getJSONArray("children");
 
-                        editor.putString("rollnumber",rollnumber);
-                        editor.commit();
 
                         for(int i=0; i < childrenData.length() ; i++){
                             JSONObject children = childrenData.getJSONObject(i);
@@ -123,17 +130,15 @@ public class LoginPage extends AppCompatActivity {
                         }
 
                         System.out.println("student list ..."+childrenList);
-                        mDialog.dismiss();
-                        Intent intent = new Intent(LoginPage.this,
+                        Intent intent = new Intent(quizResults.this,
                                 studentCards.class);
                         intent.putExtra("allChildrenData", (Serializable) childrenList);
                         startActivity(intent);
                     }
 
                     if (!success) {
-                        mDialog.dismiss();
-                        rollNumber.setText("");
-                        rollNumber.setError("Enter correct roll number to continue.");
+//                        rollNumber.setText("");
+//                        rollNumber.setError("Enter correct roll number to continue.");
 
                     }
 
@@ -151,6 +156,6 @@ public class LoginPage extends AppCompatActivity {
                 System.out.println("failed bro");
             }
         },this);
+
     }
 }
-
