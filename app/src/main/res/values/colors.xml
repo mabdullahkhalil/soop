@@ -10,4 +10,6 @@
     <color name="colorgray">#ededed</color>
     <color name="eventCardsColor">#FAA60E</color>
     <color name="colordarkgray">#474a56</color>
+    <color name="colorGreen">#ff99cc00</color>
+    <color name="colorRed">#ffff4444</color>
 </resources>

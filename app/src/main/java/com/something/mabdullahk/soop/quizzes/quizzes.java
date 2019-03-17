@@ -45,7 +45,7 @@ public class quizzes extends AppCompatActivity {
 
         GridLayoutManager quizzesGrid = new GridLayoutManager(quizzes.this, 1);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Quizzes");
+        getSupportActionBar().setTitle("Quiz Marks");
         getSupportActionBar().setLogo(R.drawable.ic_quiz);
 
 

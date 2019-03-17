@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -49,7 +50,7 @@ public class practiceQuiz extends AppCompatActivity {
         
         GridLayoutManager practiceQuizGrid = new GridLayoutManager(this, 2);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("practiceQuiz");
+        getSupportActionBar().setTitle("Practice Quizzes");
 
         ArcConfiguration configuration = new ArcConfiguration(this);
         configuration.setLoaderStyle(SimpleArcLoader.STYLE.SIMPLE_ARC);
@@ -149,4 +150,18 @@ public class practiceQuiz extends AppCompatActivity {
         },this);
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 }

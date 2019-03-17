@@ -55,21 +55,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_gravity="center"
                                 android:orientation="vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Announcements"
-                                        android:textSize="18sp"
+                                        android:textSize="20sp"
                                         android:textColor="@color/black"/>
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Teacher"
-                                        android:textSize="12sp"/>
+                                    <!--<TextView-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="Teacher"-->
+                                        <!--android:textSize="12sp"/>-->
 
 
 
@@ -102,21 +102,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
                         android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Resources"
-                                android:textSize="18sp"
+                                android:textSize="20sp"
                                 android:textColor="@color/black"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Necessary documents"
-                                android:textSize="12sp"/>
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Necessary documents"-->
+                                <!--android:textSize="12sp"/>-->
 
 
 
@@ -149,21 +149,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
                         android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Attendance"
-                                android:textSize="18sp"
+                                android:textSize="20sp"
                                 android:textColor="@color/black"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Student's attendance for the academic year"
-                                android:textSize="12sp"/>
+                            <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="Student's attendance for the academic year"-->
+                                <!--android:textSize="12sp"/>-->
 
 
 
@@ -196,21 +196,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_gravity="center"
                                 android:orientation="vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Quiz Marks"
-                                        android:textSize="18sp"
+                                        android:textSize="20sp"
                                         android:textColor="@color/black"/>
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Subject-wise marks of the tests conducted"
-                                        android:textSize="12sp"/>
+                                    <!--<TextView-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="Subject-wise marks of the tests conducted"-->
+                                        <!--android:textSize="12sp"/>-->
 
 
 
@@ -243,21 +243,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_gravity="center"
                                 android:orientation="vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Events"
-                                        android:textSize="18sp"
+                                        android:textSize="20sp"
                                         android:textColor="@color/black"/>
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="holidays, exams, meetings, trips"
-                                        android:textSize="12sp"/>
+                                    <!--<TextView-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="holidays, exams, meetings, trips"-->
+                                        <!--android:textSize="12sp"/>-->
 
 
 
@@ -290,21 +290,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_gravity="center"
                                 android:orientation="vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Payments"
-                                        android:textSize="18sp"
+                                        android:textSize="20sp"
                                         android:textColor="@color/black"/>
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Academic finances"
-                                        android:textSize="12sp"/>
+                                    <!--<TextView-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="Academic finances"-->
+                                        <!--android:textSize="12sp"/>-->
 
 
 
@@ -331,28 +331,28 @@
                                 android:layout_height="24dp"
                                 android:layout_marginLeft="8dp"
                                 android:layout_gravity="center"
-                                android:src="@drawable/ic_teaching"/>
+                                android:src="@drawable/ic_quiz"/>
 
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
-                                android:layout_marginTop="8dp"
+                                android:layout_gravity="center"
                                 android:orientation="vertical">
 
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Practice Quizzes"
-                                        android:textSize="18sp"
+                                        android:textSize="20sp"
                                         android:textColor="@color/black"/>
 
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="Online quizzes for the students"
-                                        android:textSize="12sp"/>
+                                    <!--<TextView-->
+                                        <!--android:layout_width="wrap_content"-->
+                                        <!--android:layout_height="wrap_content"-->
+                                        <!--android:text="Online quizzes for the students"-->
+                                        <!--android:textSize="12sp"/>-->
 
 
 

@@ -71,14 +71,15 @@ public class quizResults extends AppCompatActivity {
 
 
         values.add(new PieEntry(correctAns,"Correct"));
-        values.add(new PieEntry(incorrectAns,"InCorrect"));
+        values.add(new PieEntry(incorrectAns,"Incorrect"));
 
 
         pieChart.animateY(1000, Easing.EaseInOutCubic);
 
-        PieDataSet pieDataSet = new PieDataSet(values,"Marks");
+        PieDataSet pieDataSet = new PieDataSet(values,"Questions");
         pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         pieDataSet.setValueTextSize(16f);
+        pieDataSet.setColors(new int[]{R.color.colorGreen,R.color.colorRed},this);
 
         PieData data = new PieData((pieDataSet));
         data.setValueTextSize(12f);

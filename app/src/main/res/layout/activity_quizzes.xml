@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
+        android:background="@color/white"
         android:visibility="invisible"
         android:id="@+id/quizzesMessage">
 
@@ -28,7 +29,6 @@
             android:layout_marginRight="36dp"
             android:textAlignment="center"
             android:textSize="16sp"
-            android:textColor="@color/colorlogo4"
             android:text="Oops! There are no results to show yet. We'll keep digging to find them so please check back later."/>
 
     </LinearLayout>
