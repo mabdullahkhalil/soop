@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:id="@+id/cardStudent"
+    android:layout_marginEnd="8dp">
+
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="120dp"
+            android:text="Muhammad Abdullah"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/studentClass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Class 1 Section A"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/studentName" />
+
+        <TextView
+            android:id="@+id/title"
+            android:background="@drawable/circle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/studentName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="@android:dimen/app_icon_size"
+            android:textColor="@color/colorgray"
+            />
+        <!--<de.hdodenhof.circleimageview.CircleImageView-->
+            <!--android:id="@+id/studentImage"-->
+            <!--android:layout_width="100dp"-->
+            <!--app:civ_border_width="0dp"-->
+            <!--app:civ_border_color="@color/colorlogo3"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:src="@drawable/picture"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/studentName"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toTopOf="parent" />-->
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="5dp"
+    android:orientation="vertical"
+    android:background="@drawable/border4_quizcard"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:id="@+id/cardQuiz">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            />
+            <!--android:src="@drawable/picture"-->
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical">
+
+        <TextView
+        android:id="@+id/quizTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLength="25"
+        android:text=""
+            android:textStyle="bold"
+        android:textColor="@color/colorlogo3"
+        android:textSize="18sp" />
+
+        <TextView
+        android:id="@+id/quizSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Physics"
+        android:textColor="@color/colorlogo4"
+        android:textSize="16sp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+    android:layout_width="match_parent"
+    android:layout_height="2dp"
+    android:alpha=".5"
+    android:background="@color/colorlogo3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:layout_marginLeft="6dp"
+        android:layout_gravity="left"
+        android:orientation="vertical">
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:text="Maximum"
+        android:textColor="@color/colorlogo3"
+        android:textSize="14sp" />
+
+
+        <TextView
+        android:id="@+id/quizMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_gravity="left"
+        android:text="40"
+        android:textColor="@color/colorlogo3"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/white"
+        android:layout_gravity="center"
+        android:layout_marginLeft="8dp"
+        android:orientation="vertical">
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_gravity="left"
+        android:text="Average"
+        android:textColor="@color/colorlogo3"
+        android:textSize="14sp" />
+
+
+        <TextView
+        android:id="@+id/quizAverage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_gravity="left"
+        android:text="40"
+        android:textColor="@color/colorlogo3"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="8dp"
+            android:background="@android:color/white"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Marks"
+                android:textColor="@color/colorlogo3"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:id="@+id/quizMarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="40"
+                android:textColor="@color/colorlogo3"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_marginBottom="24dp"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/quizTitle"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="@font/anton"-->
+            <!--android:maxLength="15"-->
+            <!--android:text="                                                             "-->
+            <!--android:textColor="@color/colorlogo3"-->
+            <!--android:textSize="18sp" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/quizSubject"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Physics"-->
+            <!--android:textColor="@color/colorlogo4"-->
+            <!--android:textSize="16sp" />-->
+
+    <!--</LinearLayout>-->
+    <!---->
+    <!---->
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:background="@android:color/white"-->
+        <!--android:layout_marginLeft="6dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:text="MAX"-->
+            <!--android:textColor="@color/colorlogo3"-->
+            <!--android:textSize="14sp" />-->
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:alpha=".5"-->
+            <!--android:background="@color/colorlogo3" />-->
+
+
+        <!--<TextView-->
+            <!--android:id="@+id/quizMax"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:text="40"-->
+            <!--android:textColor="@color/colorlogo3"-->
+            <!--android:textSize="16dp"-->
+            <!--android:textStyle="bold" />-->
+
+    <!--</LinearLayout>-->
+
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:background="@android:color/white"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:orientation="vertical">-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:text="AVG"-->
+            <!--android:textColor="@color/colorlogo3"-->
+            <!--android:textSize="14sp" />-->
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:alpha=".5"-->
+            <!--android:background="@color/colorlogo3" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/quizAverage"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:text="40"-->
+            <!--android:textColor="@color/colorlogo3"-->
+            <!--android:textSize="16dp"-->
+            <!--android:textStyle="bold" />-->
+
+    <!--</LinearLayout>-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/quizMarks"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginRight="8dp"-->
+        <!--android:textSize="28sp"-->
+        <!--android:text="20"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="@color/colorlogo1"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginLeft="8dp"/>-->
+
+<!--</LinearLayout>-->
+
+
+
+
+</LinearLayout>

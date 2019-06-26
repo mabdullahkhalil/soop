@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SOOP</string>
+
+    <string name="check"><b>Hamza Altaf</b> shared a post about <b>quizzes</b>.</string>
+    <string name="developURL">https://soop-staging.herokuapp.com/api/v1/parents/children/</string>
+    <string name="mainURL">https://soop.io/api/v1/parents/children/</string>
+</resources>

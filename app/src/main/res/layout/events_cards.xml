@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    android:orientation="vertical"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:background="@android:color/white"
+    android:id="@+id/cardEvents">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/eventSideBar"
+            android:layout_width="20dp"
+            android:orientation="horizontal"
+            android:background="@color/colorlogo1"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="vertical">
+
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+            android:id="@+id/eventTitle"
+            android:layout_alignParentStart="true"
+            android:gravity="center"
+        android:text="Social Activity"/>
+
+
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+            android:id="@+id/eventDates"
+            android:gravity="center"
+        android:layout_below="@id/eventTitle"
+        android:orientation="horizontal">
+
+        <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/events_date"/>
+
+        <TextView
+            android:id="@+id/eventDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:textSize="10sp"
+        android:text="13 - 12 January, 2019"/>
+
+        <View
+            android:id="@+id/eventsMiddleLine"
+        android:layout_width="3dp"
+        android:layout_marginLeft="8dp"
+            android:background="@color/colorlogo1"
+        android:layout_height="match_parent" />
+
+        <ImageView
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/events_togo"/>
+
+        <TextView
+            android:id="@+id/eventTogoDays"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:textSize="10sp"
+        android:text="2 days to go"/>
+
+        </LinearLayout>
+
+                <TextView
+                    android:id="@+id/eventDescription"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/eventDates"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="14sp"
+                    android:text="This would counter the “survival instinct” and “evolution and adaptation” argu- ments mentioned above. However, von Neumann died before he was able to work on the evolution problem."/>
+
+
+
+
+            <ImageView
+                android:id="@+id/eventPicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/events_functions"
+                android:layout_marginRight="4dp"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
